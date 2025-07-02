@@ -18,7 +18,7 @@ It creates a schema named 'sales_data' containig the following tables:
 To execute this setup from the termional (outside psql) use the following commands:
 
     createdb sql_foundations
-    psql -d sql_foundations -b pillar1/easy/setup_db2.sql
+    psql -d sql_foundations -f pillar1/easy/setup_db2.sql
     psql sql_foundations
 
 */
@@ -87,10 +87,10 @@ INSERT INTO sales_data.date_dim (date_value, year, month, day) VALUES
 ('2025-07-05', 2025, 7, 5);
 
 -- Create sales fact table
-CREATE TABLE sales_data.sales (
+CREATE TABLE sales_data.sales_fact (
     sale_id SERIAL PRIMARY KEY,
-    customer_id INT REFERENCES sales_data.customers(customer_id),
-    product_id INT REFERENCES sales_data.products(product_id),
+    customer_id INT REFERENCES sales_data.customers_dim(customer_id),
+    product_id INT REFERENCES sales_data.products_dim(product_id),
     store_id INT REFERENCES sales_data.store_dim(store_id),
     date_id INT REFERENCES sales_data.date_dim(date_id),
     quantity INT,
@@ -98,7 +98,7 @@ CREATE TABLE sales_data.sales (
 );
 
 -- Populate the sales fact table
-INSERT INTO sales_data.sales (customer_id, product_id, store_id, date_id, quantity, total_amount) VALUES
+INSERT INTO sales_data.sales_fact (customer_id, product_id, store_id, date_id, quantity, total_amount) VALUES
 (1, 1, 1, 1, 2, 31.98),   -- Alice Smith buys 2 Hammers at Madrid store on 2025-07-01
 (2, 3, 2, 2, 1, 79.99),   -- Bob Johnson buys 1 Electric Drill at Barcelona store on 2025-07-02
 (3, 2, 3, 3, 3, 37.50),   -- Carlos Martínez buys 3 Screwdriver Sets at Valencia store on 2025-07-03
