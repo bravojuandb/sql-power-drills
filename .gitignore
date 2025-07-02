@@ -200,4 +200,4 @@ pillar_1/easy/db_setup.sql
 drills.db
 pillar1-easy.db
 pillar_1/run_sqlite.sh
-pillar_1/setup.sql
+pillar_1/setup.sql.venv/

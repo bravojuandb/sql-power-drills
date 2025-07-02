@@ -33,15 +33,36 @@ pillar 2/
 pillar 3/
 pillar 4/
 ```
+## Setting up a Virtual Enviroment
+
+### On Mac
+
+cd path/to/your/local-repo
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+echo ".venv/" >> .gitignore
+
 
 ## PSQL Setup
 
 To install `psql` on macOS using Homebrew:
 
 ```bash
+
 brew update
 brew install postgresql
 brew services start postgresql
+
+brew services restart postgresql@14
+brew services stop postgresql@14
+brew services start postgresql@14
+
+brew uninstall postgresql@14
+rm -rf /opt/homebrew/var/postgresql@14
+brew install postgresql@14
+brew services start postgresql@14
+
 ```
 
 Then verify installation with:
@@ -50,6 +71,13 @@ Then verify installation with:
 psql --version
 ```
 
+## Create User and Database (Dev Project Setup)
+
+```bash
+createuser -s juan         # Create superuser
+createdb pillar1           # Create a database
+psql pillar1               # Connect to it
+```
 ## Loading .sql scripts
 
 To run a `.sql` file from the command line:
@@ -62,4 +90,6 @@ For example, if you're in the project root and want to load an "easy" drill:
 
 ```bash
 psql -d postgres -f pillar_1/easy/drill1.sql
+
 ```
+
