@@ -37,12 +37,13 @@ pillar 4/
 
 ### On Mac
 
+```bash
 cd path/to/your/local-repo
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 echo ".venv/" >> .gitignore
-
+```
 
 ## PSQL Setup
 
@@ -93,3 +94,17 @@ psql -d postgres -f pillar_1/easy/drill1.sql
 
 ```
 
+## Run This Project in GitHub Codespaces
+
+This project uses a `.devcontainer` folder to auto-install PostgreSQL and run the database setup.
+
+### Step-by-step:
+
+1. Click the green **"Code"** button in this repository.
+2. Select the **"Codespaces"** tab.
+3. Click **"Create codespace on main"**.
+4. Wait for the container to build (1–2 minutes).
+5. In the terminal, confirm PostgreSQL is running:
+```bash
+psql -U postgres -d sql_foundations
+```
