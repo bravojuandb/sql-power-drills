@@ -33,9 +33,30 @@ pillar 2/
 pillar 3/
 pillar 4/
 ```
-## Setting up a Virtual Enviroment
 
-### On Mac
+## Github Codespaces Setup
+
+1. Use sqlite3, the easiest way to run slq
+
+```bash
+
+sqlite3 --version
+
+sudo apt update
+sudo apt install sqlite3
+
+sudo apt install sqlite3 libsqlite3-dev
+
+sqlite3 mydata.db
+
+.quit
+
+```
+
+
+## Set up on Mac
+
+1. Create a Virtual Enviroment:
 
 ```bash
 cd path/to/your/local-repo
@@ -43,17 +64,16 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 echo ".venv/" >> .gitignore
+
 ```
-
-## PSQL Setup
-
-To install `psql` on macOS using Homebrew:
+2. Install `psql` on macOS using Homebrew:
 
 ```bash
-
 brew update
 brew install postgresql
 brew services start postgresql
+
+--troubleshhoting:--
 
 brew services restart postgresql@14
 brew services stop postgresql@14
@@ -63,10 +83,9 @@ brew uninstall postgresql@14
 rm -rf /opt/homebrew/var/postgresql@14
 brew install postgresql@14
 brew services start postgresql@14
-
 ```
 
-Then verify installation with:
+3. Then verify installation with:
 
 ```bash
 psql --version
@@ -94,17 +113,3 @@ psql -d postgres -f pillar_1/easy/drill1.sql
 
 ```
 
-## Run This Project in GitHub Codespaces
-
-This project uses a `.devcontainer` folder to auto-install PostgreSQL and run the database setup.
-
-### Step-by-step:
-
-1. Click the green **"Code"** button in this repository.
-2. Select the **"Codespaces"** tab.
-3. Click **"Create codespace on main"**.
-4. Wait for the container to build (1–2 minutes).
-5. In the terminal, confirm PostgreSQL is running:
-```bash
-psql -U postgres -d sql_foundations
-```
