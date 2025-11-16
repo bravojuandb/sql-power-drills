@@ -1,115 +1,100 @@
 # sql-power-drills
 
-This is my personal SQL training ground — organized around Four Pillars of SQL:
+```
+Καλλίστη ἁρμονίη 
+            ἀφανὴς 
+               φανερῆς ἀρείων.
 
-- Query Fluency & Set Logic
+The finest harmony 
+            is the hidden, 
+               better than the visible. – Heraclitus
+```
 
-- Readable & Robust SQL
 
-- Scripted SQL & Automation
+This is my personal training ground for SQL language, organized around 8 pillars:
 
-- Data Pipeline Thinking
-
+Pillar 1 → SQL grammar  
+Pillar 2 → Analytical reasoning  
+Pillar 3 → Warehouse modeling  
+Pillar 4 → Performance & indexing  
+Pillar 5 → Python ETL automation  
+Pillar 6 → Orchestration & scheduling  
+Pillar 7 → Cloud data fundamentals  
+Pillar 8 → Full pipeline architecture  
 
 ## Folder structure
 
 ```bash
-pillar 1/
-├── easy/
-│   ├── create_db_easy.sql
-│   ├── insert_db_easy.sql
-│   ├── drill1.sql
-│   ├── drill2.sql
-│   └── ...
-├── medium/
-│   ├── create_db_medium.sql
-│   ├── insert_db_medium.sql
-│   └── ...
-└── hard/
-│   ├── create_db_hard.sql
-│   ├── insert_db_hard.sql
-│   └── ...
-pillar 2/
-pillar 3/
-pillar 4/
-```
-
-## Github Codespaces Setup
-
-1. Use sqlite3, the easiest way to run slq
-
-```bash
-
-sqlite3 --version
-
-sudo apt update
-sudo apt install sqlite3
-
-sudo apt install sqlite3 libsqlite3-dev
-
-sqlite3 mydata.db
-
-.quit
-
-```
-
-
-## Set up on Mac
-
-1. Create a Virtual Enviroment:
-
-```bash
-cd path/to/your/local-repo
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-echo ".venv/" >> .gitignore
+pillar1_query_fluency/
+│   ├─ datasets/
+│   ├─ drills/
+│   │   ├─ drill_1.sql
+│   │   ├─ drill_2.sql
+│   │   └─ ...
+│   └─ README.md
+│
+pillar2_analytical_sql/
+│   ├─ drills/
+│   └─ README.md
+│
+pillar3_data_engineering_sql/
+│   ├─ drills/
+│   └─ README.md
+│
+pillar4_performance/
+│   ├─ drills/
+│   └─ README.md
+│
+pillar5_python_etl/
+│   ├─ drills/
+│   └─ README.md
+│
+pillar6_orchestration/
+│   ├─ drills/
+│   └─ README.md
+│
+pillar7_cloud_storage/
+│   ├─ drills/
+│   └─ README.md
+│
+pillar8_pipeline_architecture/
+│   ├─ projects/
+│   └─ README.md
+│
+README.md
 
 ```
-2. Install `psql` on macOS using Homebrew:
 
-```bash
-brew update
-brew install postgresql
-brew services start postgresql
+## Content summary per Pillar
 
---troubleshhoting:--
+**Pillar 1 — SQL Grammar**  
+Become fluent on the fundamentals of querying: selecting, filtering, grouping, joining, and handling NULLs. 
 
-brew services restart postgresql@14
-brew services stop postgresql@14
-brew services start postgresql@14
+**Pillar 2 — Analytical SQL**  
+Use CTEs, subqueries, and window functions to answer business questions.  
+Develop multi-step, layered logic for reports and metrics.
 
-brew uninstall postgresql@14
-rm -rf /opt/homebrew/var/postgresql@14
-brew install postgresql@14
-brew services start postgresql@14
-```
+**Pillar 3 — Data Engineering SQL**  
+Design schemas, enforce constraints, clean raw data, deduplicate, and load tables.  
+Build the warehouse structure that pipelines depend on.
 
-3. Then verify installation with:
+**Pillar 4 — Performance & Indexing**  
+Understand how queries run.  
+Use EXPLAIN plans and indexes to improve speed, reduce scans, and avoid common anti-patterns.
 
-```bash
-psql --version
-```
+**Pillar 5 — Python ETL Automation**  
+Use Python to move, clean, and transform data.  
+Write ETL scripts, connect to databases, manage configs, and validate inputs.
 
-## Create User and Database (Dev Project Setup)
+**Pillar 6 — Orchestration & Scheduling**  
+Run pipelines automatically and reliably.  
+Build DAG-style workflows with dependencies, retries, idempotency, and logging.
 
-```bash
-createuser -s juan         # Create superuser
-createdb pillar1           # Create a database
-psql pillar1               # Connect to it
-```
-## Loading .sql scripts
+**Pillar 7 — Cloud Data Fundamentals**  
+Store and move data in cloud environments.  
+Use object storage, IAM basics, and warehouse loading patterns safely and efficiently.
 
-To run a `.sql` file from the command line:
-
-```bash
-psql -d your_database_name -f path/to/your_script.sql
-```
-
-For example, if you're in the project root and want to load an "easy" drill:
-
-```bash
-psql -d postgres -f pillar_1/easy/drill1.sql
-
-```
+**Pillar 8 — Full Pipeline Architecture**  
+Assemble complete systems:  
+raw → staging → clean → analytics layers, with data quality checks, modular structure, and documentation.
 
