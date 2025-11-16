@@ -201,3 +201,6 @@ drills.db
 pillar1-easy.db
 pillar_1/run_sqlite.sh
 pillar_1/setup.sql.venv/
+
+
+archive/
