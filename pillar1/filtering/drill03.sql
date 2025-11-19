@@ -1,0 +1,1 @@
+/* Order artists alphabetically by name.*/
