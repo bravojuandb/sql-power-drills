@@ -16,3 +16,6 @@
 
 */
 
+SELECT FirstName || " " || LastName
+FROM Customer 
+ORDER BY FirstName;
