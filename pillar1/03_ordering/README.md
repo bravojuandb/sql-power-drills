@@ -1,7 +1,7 @@
 # Pillar 1 — Ordering Drills  
 
 
-## A. Basic ORDER BY (Ascending)
+## ✅ A. Basic ORDER BY (Ascending)
 
 1. List customers ordered by first name.  
 2. List tracks ordered by milliseconds.  
@@ -11,7 +11,7 @@
 
 ---
 
-## B. ORDER BY (Descending)
+## ✅ B. ORDER BY (Descending)
 
 6. Tracks ordered by milliseconds (longest first).  
 7. Invoices ordered by total (highest first).  
@@ -21,7 +21,7 @@
 
 ---
 
-## C. ORDER BY Multiple Columns
+## ✅ C. ORDER BY Multiple Columns
 
 11. Customers ordered by country, then by last_name.  
 12. Tracks ordered by composer, then track name.  
@@ -31,7 +31,7 @@
 
 ---
 
-## D. LIMIT
+## ✅ D. LIMIT
 
 16. Show the first 5 tracks.  
 17. Show the first 10 customers.  
@@ -41,7 +41,7 @@
 
 ---
 
-## E. ORDER BY + LIMIT (Top-N Patterns)
+## ✅ E. ORDER BY + LIMIT (Top-N Patterns)
 
 21. Top 10 longest tracks (name + milliseconds).  
 22. Top 5 most expensive invoices.  
@@ -51,7 +51,7 @@
 
 ---
 
-## F. Mixed Patterns
+## ✅ F. Mixed Patterns
 
 26. Tracks with composer not null, ordered by milliseconds DESC (top 10).  
 27. Customers from Brazil ordered by last_name, limit 8.  
