@@ -1,71 +1,114 @@
-## Pillar 1: Query Fluency (The Grammar of SQL)
+# Pillar 1: Query Fluency (The Grammar of SQL)
 
-By the end of this round I should be able to:  
+These are the building blocks of Pillar 1:  
 
-- Write joins without checking documentation.
-- Build grouped aggregations with HAVING.
-- Handle nulls correctly.
-- Combine filters with logical operators.
-- Sort and limit results.
-- Read schema and understand relationships.
+## 1. Selection 
 
-
-### Selection  
-
-*SELECT · DISTINCT · Aliases*  
-
-1. Select customer names and countries (with aliases).  
-2. List all unique billing countries.  
-3. Return track names and durations, renaming columns cleanly.
+Core skills:
+- `SELECT`
+- `DISTINCT`
+- Column aliases
 
 ---
 
-### Filtering  
+## 2. Filtering  
 
-*WHERE · BETWEEN · IN · LIKE · AND/OR*  
-
-1. Find all invoices from 2012.  
-2. Select customers from Spain or Germany using `IN`.  
-3. Return tracks whose name contains “Love” using `LIKE`.
-
----
-
-### Ordering
-
-*ORDER BY · LIMIT*  
-
-1. Show the 10 most expensive tracks.  
-2. List the 5 most recent invoices.  
-3. Order artists alphabetically by name.
+Core skills:
+- `WHERE`
+- `AND` / `OR`
+- `BETWEEN`
+- `IN`
+- `LIKE`
+- Comparison operators
 
 ---
 
-### Aggregations
+## 3. Ordering
 
-*COUNT · SUM · AVG · MIN · MAX · GROUP BY · HAVING*  
-
-1. Count how many customers exist per country.  
-2. Total invoice amounts per customer.  
-3. Return genres with more than 50 tracks (HAVING).
-
----
-
-### Joins
-
-I*NNER JOIN · LEFT JOIN*  
-
-1. Join invoices with customers to display who bought what.  
-2. Show each track with its genre name.  
-3. List invoices and the employee who handled them (employee → customer → invoice chain).
+Core skills:
+- `ORDER BY`
+- `ASC` / `DESC`
+- `LIMIT`
 
 ---
 
-### Null Handling
+### 4. Aggregations
 
-*IS NULL · COALESCE*  
+Core skills:
+- `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
+- `GROUP BY`
+- `HAVING`
+---
 
-1. Find invoices without a billing state (IS NULL).  
-2. Replace null postal codes with “Unknown” using COALESCE.  
-3. Show customers with or without a company name (company can be NULL).
+## 5. Joins
+
+Core skills:
+- `INNER JOIN`
+- `LEFT JOIN`
 
 ---
+
+## 6. NULL Logic
+Core skills:
+- `IS NULL`
+- `IS NOT NULL`
+- `COALESCE`
+
+---
+
+## Folder Structure
+
+Levels of organization:
+
+- **Level 1:** Pillar folder → a major learning domain  
+- **Level 2:** Subcategories (Selection, Filtering, Ordering…) → building blocks  
+- **Level 3:** Drills (`drill01.sql` … `drill30.sql`) → atomic exercises  
+
+```bash
+pillar1/
+├── 00_datasets/
+│   └── Chinook.sqlite
+│
+├── 01_selection/
+│   ├── drill01.sql
+│   ├── drill02.sql
+│   ├── ...
+│   ├── drill30.sql
+│   └── README.md
+│
+├── 02_filtering/
+│   ├── drill01.sql
+│   ├── drill02.sql
+│   ├── ...
+│   ├── drill30.sql
+│   └── README.md
+│
+├── 03_ordering/
+│   ├── drill01.sql
+│   ├── drill02.sql
+│   ├── ...
+│   ├── drill30.sql
+│   └── README.md
+│
+├── 04_aggregations/
+│   ├── drill01.sql
+│   ├── drill02.sql
+│   ├── ...
+│   ├── drill30.sql
+│   └── README.md
+│
+├── 05_joins/
+│   ├── drill01.sql
+│   ├── drill02.sql
+│   ├── ...
+│   ├── drill30.sql
+│   └── README.md
+│
+├── 06_null_logic/
+│   ├── drill01.sql
+│   ├── drill02.sql
+│   ├── ...
+│   ├── drill30.sql
+│   └── README.md
+│
+└── README.md
