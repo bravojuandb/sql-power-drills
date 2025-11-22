@@ -13,61 +13,7 @@ The finest harmony
 
 This is my personal training ground for SQL language, organized around 8 pillars:
 
-Pillar 1 → SQL grammar  
-Pillar 2 → Analytical reasoning  
-Pillar 3 → Warehouse modeling  
-Pillar 4 → Performance & indexing  
-Pillar 5 → Python ETL automation  
-Pillar 6 → Orchestration & scheduling  
-Pillar 7 → Cloud data fundamentals  
-Pillar 8 → Full pipeline architecture  
-
-## Folder structure
-
-```bash
-pillar1_query_fluency/
-│   ├─ datasets/
-│   ├─ drills/
-│   │   ├─ drill_1.sql
-│   │   ├─ drill_2.sql
-│   │   └─ ...
-│   └─ README.md
-│
-pillar2_analytical_sql/
-│   ├─ drills/
-│   └─ README.md
-│
-pillar3_data_engineering_sql/
-│   ├─ drills/
-│   └─ README.md
-│
-pillar4_performance/
-│   ├─ drills/
-│   └─ README.md
-│
-pillar5_python_etl/
-│   ├─ drills/
-│   └─ README.md
-│
-pillar6_orchestration/
-│   ├─ drills/
-│   └─ README.md
-│
-pillar7_cloud_storage/
-│   ├─ drills/
-│   └─ README.md
-│
-pillar8_pipeline_architecture/
-│   ├─ projects/
-│   └─ README.md
-│
-README.md
-
-```
-
-## Content summary per Pillar
-
-**Pillar 1 — SQL Grammar**  
+**[Pillar 1 — Query Fluency](pillar1_query_fluency/README.md)**  
 Become fluent on the fundamentals of querying: selecting, filtering, grouping, joining, and handling NULLs. 
 
 **Pillar 2 — Analytical SQL**  
@@ -97,4 +43,28 @@ Use object storage, IAM basics, and warehouse loading patterns safely and effici
 **Pillar 8 — Full Pipeline Architecture**  
 Assemble complete systems:  
 raw → staging → clean → analytics layers, with data quality checks, modular structure, and documentation.
+
+
+## Folder structure
+
+```bash
+pillar1_query_fluency/
+│  
+pillar2_analytical_sql/
+│
+pillar3_data_engineering_sql/
+│
+pillar4_performance/
+│
+pillar5_python_etl/
+│
+pillar6_orchestration/
+│
+pillar7_cloud_storage/
+│
+pillar8_pipeline_architecture/
+│
+README.md
+
+```
 
