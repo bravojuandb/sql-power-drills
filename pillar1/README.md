@@ -1,66 +1,71 @@
 ## Pillar 1: Query Fluency (The Grammar of SQL)
 
-# Pillar 1 — Selection Drills  
+By the end of this round I should be able to:  
 
-**Goal:** Build absolute fluency in `SELECT`, `DISTINCT`, and column aliases (`AS`).  
-All drills use the **Chinook SQLite** database.
+- Write joins without checking documentation.
+- Build grouped aggregations with HAVING.
+- Handle nulls correctly.
+- Combine filters with logical operators.
+- Sort and limit results.
+- Read schema and understand relationships.
 
----
 
-## A. Basic Column Retrieval
+### Selection  
 
-1. ✅ Select all customer first names.  
-2. ✅ Select track names and milliseconds.  
-3. ✅ Return employee last names and titles.  
-4. ✅ Select album titles.  
-5. ✅ Return genre names.  
+*SELECT · DISTINCT · Aliases*  
 
----
-
-## B. Multiple Columns (Clean Retrieval)
-
-6. ✅ Select customer first name, last name, and country.  
-7. ✅ Return invoice date, billing address, and total.  
-8. ✅ Show each track’s name, composer, and album ID.  
-9. ✅ Select artist ID and artist name.  
-10. ✅ Return employee first name, last name, and their reports-to manager.
+1. Select customer names and countries (with aliases).  
+2. List all unique billing countries.  
+3. Return track names and durations, renaming columns cleanly.
 
 ---
 
-## C. Aliases (`AS`)
+### Filtering  
 
-11. ✅ Return customer first name AS `first`, last name AS `last`.  
-12. ✅ Select track name AS `track_name`, milliseconds AS `duration_ms`.  
-13. ✅ Show invoice total AS `amount`, invoice_date AS `date`.  
-14. ✅ Select employee last name AS `employee`, title AS `role`.  
-15. ✅ Return artist name AS `artist`, artist_id AS `id`.
+*WHERE · BETWEEN · IN · LIKE · AND/OR*  
 
----
-
-## D. DISTINCT
-
-16. ✅ List all distinct customer countries.  
-17. ✅ List all distinct billing cities.  
-18. ✅ Return all distinct composers from the tracks table.  
-19. ✅ List distinct genres.  
-20. ✅ List distinct album IDs present in the tracks table.
+1. Find all invoices from 2012.  
+2. Select customers from Spain or Germany using `IN`.  
+3. Return tracks whose name contains “Love” using `LIKE`.
 
 ---
 
-## E. Combined Selection + Distinct + Aliases
+### Ordering
 
-21. ✅ Distinct customer countries AS `country`.  
-22. ✅ Distinct composers AS `composer`.  
-23. ✅ Distinct invoice billing countries AS `billing_country`.  
-24. ✅ Distinct employee titles AS `role`.  
-25. ✅ Distinct track media types AS `media`.
+*ORDER BY · LIMIT*  
+
+1. Show the 10 most expensive tracks.  
+2. List the 5 most recent invoices.  
+3. Order artists alphabetically by name.
 
 ---
 
-## F. Slightly Applied (Still Pure Selection)
+### Aggregations
 
-26. ✅ Select the 10 longest tracks (name + milliseconds).  
-27. ✅ Select the 10 shortest tracks (name + milliseconds).  
-28. ✅ Show customer full names as `full_name` (first || ' ' || last).  
-29. ✅ Show track name + calculated seconds (milliseconds/1000).  
-30. ✅ Return invoice total + 20% tax (calculated column) AS `with_tax`.
+*COUNT · SUM · AVG · MIN · MAX · GROUP BY · HAVING*  
+
+1. Count how many customers exist per country.  
+2. Total invoice amounts per customer.  
+3. Return genres with more than 50 tracks (HAVING).
+
+---
+
+### Joins
+
+I*NNER JOIN · LEFT JOIN*  
+
+1. Join invoices with customers to display who bought what.  
+2. Show each track with its genre name.  
+3. List invoices and the employee who handled them (employee → customer → invoice chain).
+
+---
+
+### Null Handling
+
+*IS NULL · COALESCE*  
+
+1. Find invoices without a billing state (IS NULL).  
+2. Replace null postal codes with “Unknown” using COALESCE.  
+3. Show customers with or without a company name (company can be NULL).
+
+---
