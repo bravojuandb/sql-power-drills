@@ -1,60 +1,63 @@
-# Pillar 1 — Ordering Drills  
----
-
-## A. Basic ORDER BY (Ascending)
-
-1. List customers ordered by first name.  
-2. List tracks ordered by milliseconds.  
-3. Order artists alphabetically by name.  
-4. Order employees by hire date.  
-5. Order invoices by total (smallest first).
+# Pillar 1 — Filtering Drills  
 
 ---
 
-## B. ORDER BY (Descending)
+## A. Simple WHERE (Single Condition)
 
-6. Tracks ordered by milliseconds (longest first).  
-7. Invoices ordered by total (highest first).  
-8. Customers ordered by last name Z → A.  
-9. Employees ordered by birthdate (youngest first).  
-10. Tracks ordered by bytes (largest file first).
-
----
-
-## C. ORDER BY Multiple Columns
-
-11. Customers ordered by country, then by last_name.  
-12. Tracks ordered by composer, then track name.  
-13. Invoices ordered by billing_country, then total descending.  
-14. Employees ordered by reports_to, then first_name.  
-15. Artists ordered by name length, then alphabetically.
+1. All invoices with total > 10.  
+2. All customers from Brazil.  
+3. All tracks longer than 300000 milliseconds.  
+4. Employees with title = "Sales Support Agent".  
+5. Tracks where composer is NULL.
 
 ---
 
-## D. LIMIT
+## B. Multiple Conditions (AND / OR)
 
-16. Show the first 5 tracks.  
-17. Show the first 10 customers.  
-18. Show the first 3 invoices by date.  
-19. Return the first 20 artists alphabetically.  
-20. Show the first 7 employees ordered by hire_date.
-
----
-
-## E. ORDER BY + LIMIT (Top-N Patterns)
-
-21. Top 10 longest tracks (name + milliseconds).  
-22. Top 5 most expensive invoices.  
-23. Top 15 customers alphabetically by last_name.  
-24. Top 10 tracks with the largest bytes.  
-25. Top 3 employees with the earliest hire_date.
+6. Customers from Spain **and** not from Madrid.  
+7. Tracks with genre_id = 1 **or** genre_id = 2.  
+8. Invoices over 15 **and** from 2009.  
+9. Customers from USA **or** Canada.  
+10. Tracks with milliseconds < 200000 **and** bytes > 100000.
 
 ---
 
-## F. Mixed Patterns
+## C. BETWEEN
 
-26. Tracks with composer not null, ordered by milliseconds DESC (top 10).  
-27. Customers from Brazil ordered by last_name, limit 8.  
-28. Invoices from 2009 ordered by total descending, limit 5.  
-29. Artists whose name contains ‘The’, ordered alphabetically, limit 12.  
-30. Tracks from genre_id 1 ordered by name ASC, limit 20.
+11. Invoices where total is **between** 5 and 10.  
+12. Tracks with milliseconds **between** 150000 and 250000.  
+13. Employee hire dates between 2002 and 2006.  
+14. Invoice dates between '2009-01-01' and '2009-12-31'.  
+15. Customers whose customer_id is between 10 and 30.
+
+---
+
+## D. IN
+
+16. Customers from ('Spain', 'France', 'Italy').  
+17. Invoices with billing country IN ('Germany', 'Austria').  
+18. Tracks whose genre_id IN (1, 2, 3).  
+19. Employees with employee_id IN (1, 2, 3).  
+20. Tracks where composer IN ('AC/DC', 'Queen').
+
+---
+
+## E. LIKE (Pattern Matching)
+
+21. Tracks whose name starts with 'A%'.  
+22. Tracks whose name ends with '%Love'.  
+23. Customers whose email contains '.uk'.  
+24. Artists whose name contains 'the' (case-insensitive).  
+25. Tracks whose composer contains 'Bach'.
+
+---
+
+## F. Combined Filtering Patterns
+
+26. Tracks with name LIKE 'S%' **and** milliseconds > 200000.  
+27. Customers from Canada **or** last_name LIKE 'G%'.  
+28. Invoices from 2010 **and** total > 5 **and** billing_country = 'USA'.  
+29. Tracks where composer LIKE '%Metal%' **or** genre_id IN (1, 7).  
+30. Customers whose company IS NULL **and** country = 'USA'.
+
+---
