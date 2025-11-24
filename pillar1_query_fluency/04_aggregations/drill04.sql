@@ -11,3 +11,7 @@
 8|UnitPrice|NUMERIC(10,2)|1||0
 
  */
+
+ SELECT 
+     ROUND(AVG(Milliseconds), 2) AS avg_milliseconds
+ FROM Track;
