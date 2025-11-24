@@ -14,3 +14,16 @@
 11|Email|NVARCHAR(60)|1||0
 12|SupportRepId|INTEGER|0||0
  */
+
+SELECT COUNT(CustomerId)
+FROM Customer;
+
+/* Or, because CustomerID is the primary key: */
+
+SELECT COUNT(*) AS total_customers
+FROM Customer;
+
+/* Takeaways:
+- COUNT(column), counts non NULL values in that column,
+- COUNT(*), counts all rows regardless of nulls
+*/

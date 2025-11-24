@@ -11,3 +11,6 @@
 8|UnitPrice|NUMERIC(10,2)|1||0
 
  */
+
+SELECT COUNT(TrackId) AS track_count
+FROM Track;
