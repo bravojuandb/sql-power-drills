@@ -12,3 +12,8 @@
 
 */
 
+SELECT 
+    GenreId,
+    ROUND(AVG(Milliseconds), 2) AS avg_duration
+FROM Track
+GROUP BY GenreId;
