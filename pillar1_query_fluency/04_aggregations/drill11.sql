@@ -11,3 +11,11 @@
 8|Total|NUMERIC(10,2)|1||0
 
 */
+
+SELECT 
+    BillingCountry,
+    COALESCE(BillingState, "NO RECORD"),
+    COUNT(InvoiceId) AS invoice_count
+FROM Invoice 
+GROUP BY BillingCountry, BillingState
+ORDER BY invoice_count ASC;

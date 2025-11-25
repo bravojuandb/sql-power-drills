@@ -11,3 +11,13 @@
 8|Total|NUMERIC(10,2)|1||0
 
  */
+
+SELECT 
+    BillingCountry,
+    BillingCity,
+    SUM(Total) AS invoice_total
+FROM Invoice
+GROUP BY BillingCountry, BillingCity
+ORDER BY 
+    BillingCountry,
+    invoice_total DESC;
