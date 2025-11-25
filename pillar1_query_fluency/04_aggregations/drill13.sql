@@ -11,3 +11,15 @@
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT
+    AlbumId,
+    COALESCE((Composer), "No composer") AS composer_clean,
+    COUNT(*) AS track_count
+FROM Track
+GROUP BY 
+    AlbumId,
+    Composer
+ORDER BY 
+    composer_clean ASC,
+    AlbumId ASC;
