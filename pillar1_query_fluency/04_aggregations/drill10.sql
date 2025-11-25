@@ -13,3 +13,9 @@
 */
 
 
+SELECT 
+    MediaTypeId,
+    COUNT(TrackId) AS track_count
+FROM Track
+GROUP BY MediaTypeId
+ORDER BY track_count ASC, MediaTypeId;

@@ -16,3 +16,8 @@
 
 */
 
+SELECT 
+    Country,
+    COUNT(CustomerId) AS customer_count
+FROM Customer
+GROUP BY Country;
