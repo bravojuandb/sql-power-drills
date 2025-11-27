@@ -11,3 +11,9 @@
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT GenreId, AVG(Milliseconds) AS avg_duration
+FROM Track 
+GROUP BY GenreId
+HAVING AVG(Milliseconds) > 250000
+ORDER BY avg_duration DESC;

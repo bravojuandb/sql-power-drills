@@ -11,3 +11,9 @@
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT AlbumId, COUNT(TrackId) AS track_count
+FROM Track
+GROUP BY AlbumId
+HAVING COUNT(TrackId) > 8
+ORDER BY track_count DESC;

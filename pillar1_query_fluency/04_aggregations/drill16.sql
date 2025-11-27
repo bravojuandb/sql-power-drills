@@ -16,3 +16,11 @@ Countries with more than 5 customers.
 12|SupportRepId|INTEGER|0||0
 
 */
+
+SELECT 
+    Country, 
+    COUNT(CustomerId) AS customer_count
+FROM Customer 
+GROUP BY Country 
+HAVING COUNT(CustomerId) > 5
+ORDER BY customer_count DESC;

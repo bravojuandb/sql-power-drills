@@ -13,3 +13,9 @@ Billing countries with total invoice revenue above 100.
 8|Total|NUMERIC(10,2)|1||0
 
 */
+
+SELECT BillingCountry, SUM(Total) AS total_revenue
+FROM Invoice
+GROUP BY BillingCountry 
+HAVING SUM(Total) > 100
+ORDER BY total_revenue DESC;

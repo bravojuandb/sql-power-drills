@@ -12,3 +12,10 @@ Media types with fewer than 20 tracks
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT MediaTypeId, COUNT(TrackId) AS track_count 
+FROM Track 
+GROUP BY MediaTypeId 
+HAVING COUNT(TrackId) < 20
+ORDER BY track_count;
+
