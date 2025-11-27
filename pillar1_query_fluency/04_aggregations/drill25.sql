@@ -12,3 +12,8 @@ Average track length per genre for tracks composed by “AC/DC”
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT GenreId, AVG(Milliseconds) AS avg_duration
+FROM Track 
+WHERE Composer = "AC/DC"
+GROUP BY GenreId;

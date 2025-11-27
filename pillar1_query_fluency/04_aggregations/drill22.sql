@@ -11,3 +11,9 @@
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT AlbumId, COUNT(*) AS track_count
+FROM Track 
+WHERE Milliseconds > 250000 
+GROUP BY AlbumId
+ORDER BY track_count;

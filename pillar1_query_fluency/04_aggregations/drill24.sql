@@ -15,3 +15,9 @@
 12|SupportRepId|INTEGER|0||0
 
 */
+
+SELECT State, COUNT(*) AS customer_count
+FROM Customer
+WHERE Country = "USA"
+GROUP BY State
+ORDER BY customer_count DESC;

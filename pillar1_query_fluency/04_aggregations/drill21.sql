@@ -1,4 +1,4 @@
-/*Count invoices from 2009 per billing country. 
+/*Count invoices from 2022 per billing country. 
 
 0|InvoiceId|INTEGER|1||1
 1|CustomerId|INTEGER|1||0
@@ -11,3 +11,10 @@
 8|Total|NUMERIC(10,2)|1||0
 
 */
+
+SELECT BillingCountry, COUNT(*) AS invoice_count 
+FROM Invoice 
+WHERE InvoiceDate >= "2022-01-01" 
+    AND InvoiceDate < "2023-01-01"
+GROUP BY BillingCountry
+ORDER BY invoice_count DESC;
