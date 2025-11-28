@@ -39,8 +39,6 @@ sql-power-drills/
 ### [Pillar 1 — Query Fluency](pillar1_query_fluency/README.md)  
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)  
 
-Build fluency in core SQL grammar: selecting, filtering, ordering, grouping, joining, and handling NULLs.
-
 I use the [Chinook database](https://github.com/lerocha/chinook-database) for all drills in this section, running on the [SQLite](https://sqlite.org/index.html) engine.  
 
 ###  Pillar 2 — Analytical SQL 
