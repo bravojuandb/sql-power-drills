@@ -12,3 +12,9 @@ Top 10 albums by total track milliseconds.
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT AlbumId, SUM(Milliseconds) AS album_duration
+FROM Track 
+GROUP BY AlbumId
+ORDER BY album_duration DESC
+LIMIT 10;

@@ -1,6 +1,6 @@
 /* 
 
-Artists with more than 20 tracks.  
+Composers with more than 20 tracks.  
 
 0|TrackId|INTEGER|1||1
 1|Name|NVARCHAR(200)|1||0
@@ -13,3 +13,9 @@ Artists with more than 20 tracks.
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT Composer, COUNT(TrackId) AS track_count
+FROM Track 
+GROUP BY Composer 
+HAVING COUNT(TrackId) > 20
+ORDER BY track_count DESC;

@@ -11,3 +11,9 @@
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+SELECT GenreId, COUNT(TrackId) AS track_count
+FROM Track 
+GROUP BY GenreId
+ORDER BY track_count DESC
+LIMIT 5;

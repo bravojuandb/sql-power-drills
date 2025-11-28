@@ -12,3 +12,12 @@ Countries with more than 50 invoices, sorted by total revenue DESC.
 8|Total|NUMERIC(10,2)|1||0
 
 */
+
+SELECT 
+    BillingCountry, 
+    COUNT(InvoiceId) AS invoice_count,
+    SUM(Total) AS total_revenue
+FROM Invoice 
+GROUP BY BillingCountry
+HAVING COUNT(InvoiceId) > 50
+ORDER BY total_revenue DESC;

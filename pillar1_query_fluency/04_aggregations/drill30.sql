@@ -13,3 +13,9 @@ Media types ordered by average file size (bytes) DESC.
 8|UnitPrice|NUMERIC(10,2)|1||0
 
 */
+
+
+SELECT MediaTypeId, AVG(Bytes) AS avg_file_size
+FROM Track 
+GROUP BY MediaTypeId
+ORDER BY avg_file_size DESC;
