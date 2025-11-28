@@ -11,7 +11,8 @@ Levels of organization:
 ```bash
 pillar2_analytical_sql/
 ├── 00_datasets/
-│   └── ----------------
+│   ├── Northwind.sqlitel
+│   └── Chinook.sqlite
 │
 ├── 01_subqueries/
 │   ├── drill01.sql
