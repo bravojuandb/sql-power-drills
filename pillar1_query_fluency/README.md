@@ -1,62 +1,6 @@
 # Pillar 1: Query Fluency (The Grammar of SQL)
 
-These are the building blocks of Pillar 1:  
-
-## 1. Selection 
-
-Core skills:
-- `SELECT`
-- `DISTINCT`
-- Column aliases
-
----
-
-## 2. Filtering  
-
-Core skills:
-- `WHERE`
-- `AND` / `OR`
-- `BETWEEN`
-- `IN`
-- `LIKE`
-- Comparison operators
-
----
-
-## 3. Ordering
-
-Core skills:
-- `ORDER BY`
-- `ASC` / `DESC`
-- `LIMIT`
-
----
-
-### 4. Aggregations
-
-Core skills:
-- `COUNT`, `SUM`, `AVG`, `MIN`, `MAX`
-- `GROUP BY`
-- `HAVING`
----
-
-## 5. Joins
-
-Core skills:
-- `INNER JOIN`
-- `LEFT JOIN`
-
----
-
-## 6. NULL Logic
-Core skills:
-- `IS NULL`
-- `IS NOT NULL`
-- `COALESCE`
-
----
-
-## Folder Structure
+## Folder structure
 
 Levels of organization:
 
@@ -71,44 +15,68 @@ pillar1/
 │
 ├── 01_selection/
 │   ├── drill01.sql
-│   ├── drill02.sql
 │   ├── ...
 │   ├── drill30.sql
 │   └── README.md
 │
 ├── 02_filtering/
 │   ├── drill01.sql
-│   ├── drill02.sql
 │   ├── ...
 │   ├── drill30.sql
 │   └── README.md
 │
 ├── 03_ordering/
 │   ├── drill01.sql
-│   ├── drill02.sql
 │   ├── ...
 │   ├── drill30.sql
 │   └── README.md
 │
 ├── 04_aggregations/
 │   ├── drill01.sql
-│   ├── drill02.sql
 │   ├── ...
 │   ├── drill30.sql
 │   └── README.md
 │
 ├── 05_joins/
 │   ├── drill01.sql
-│   ├── drill02.sql
 │   ├── ...
 │   ├── drill30.sql
 │   └── README.md
 │
 ├── 06_null_logic/
 │   ├── drill01.sql
-│   ├── drill02.sql
 │   ├── ...
 │   ├── drill30.sql
 │   └── README.md
 │
 └── README.md
+```
+
+## Subjects Covered
+
+
+**1. Selection**
+
+SELECT, DISTINCT and column aliases.
+
+**2. Filtering**
+
+WHERE, AND/OR, BETWEEN, IN, LIKE and comparison operators.
+
+**3. Ordering**
+
+ORDER BY, ASC/DESC and LIMIT.
+
+**4. Aggregations**
+
+COUNT, SUM, AVG, MIN, MAX, GORUP BY and HAVING.
+
+**5. Joins**
+
+INNER JOIN and LEFT JOIN.
+
+**6. NULL Logic**
+
+IS NULL, IS NOT NULL and COALESCE.
+
+
