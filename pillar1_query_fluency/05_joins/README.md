@@ -27,7 +27,7 @@ cd .
 12. Artists and their albums (include artists with zero albums).  
 13. Albums and their tracks (include albums with no tracks).  
 14. Employees and their direct reports (include employees with zero reports).  
-15. Customers and their companies (company column may be NULL).
+15. Customers and their support representatives (include customers with no support rep).
 
 ---
 
