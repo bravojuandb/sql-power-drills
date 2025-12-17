@@ -1,58 +1,95 @@
 # Pillar 2: Analytical SQL (Thinking in Layers)
 
+## How to run
+
+1. Check if SQLite is installed:
+```
+sqlite3 --version
+```
+2. If it is not installed, install it (macOS):
+```
+brew install sqlite
+```
+3. Open the Northwind database in the SQLite shell:
+```
+sqlite3 pillar2_analytical_sql/00_datasets/northwind.db
+```
+This opens an interactive SQLite session, and all commands now run against that database.
+
+4. Check if the database loaded by listing the tables:
+```
+.tables
+```
+5. To print aligned results, run the following commands:
+```
+.headers on
+.mode column
+```
+6. Run any SQL file (path is relative to where you launched sqlite3):
+``` 
+.read 01_subqueries/drill01.sql
+``` 
+7. Exit SQLite:
+``` 
+.quit
+``` 
+
 ## Folder structure
 
-Levels of organization:
+The folder structure is intentionally layered to reflect analytical thinking and progressive SQL complexity:  
 
-- **Level 1:** Pillar folder → a major learning domain  
-- **Level 2:** Subcategories (Selection, Filtering, Ordering…) → building blocks  
-- **Level 3:** Drills (`drill01.sql` … `drill30.sql`) → atomic exercises  
+- **First level:** Pillar folder → a major domain (Analytical SQL)
+- **Second level** Subcategories → building blocks (Selection, Filtering, Ordering…)
+- **Third level:** Drills (`drill01.sql` … `drillXX.sql`) → atomic queries  
+
+Dedicated README files contain the name of each query, inside the respective subcategory.  
+These README files describe the intent and expected output of each drill, but do not provide solutions.
+
 
 ```bash
 pillar2_analytical_sql/
 ├── 00_datasets/
-│   ├── Northwind.sqlitel
-│   └── Chinook.sqlite
+│   └── northwind.db
 │
 ├── 01_subqueries/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drill30.sql
+│   ├── drillXX.sql
 │   └── README.md
 │
 ├── 02_ctes/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drill30.sql
+│   ├── drillXX.sql
 │   └── README.md
 │
 ├── 03_window_functions/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drill30.sql
+│   ├── drillXX.sql
 │   └── README.md
 │
 ├── 04_conditional_logic/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drill30.sql
+│   ├── drillXX.sql
 │   └── README.md
 │
 ├── 05_multi_joins/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drill30.sql
+│   ├── drillXX.sql
 │   └── README.md
 │
 ├── 06_cohort/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drill30.sql
+│   ├── drillXX.sql
 │   └── README.md
 ├── 07_top_n/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drill30.sql
+│   ├── drillXX.sql
 │   └── README.md
 │
 └── README.md
