@@ -14,18 +14,18 @@ Usage:
 Generate the expected ("golden") CSV for a SQL drill (run once after validating
 the query logic):
 
-    python check_sql.py \
-      --db data/chinook.db \
-      --sql pillar2/subqueries/drill01.sql \
-      --expected expected/subqueries/drill01.csv \
-      --write-expected
+python3 scripts/check_sql.py \
+  --db 00_datasets/northwind.db \
+  --sql 01_subqueries/drill02.sql \
+  --expected tests/pillar2_analytical_sql/expected/01_subqueries/drill02.csv \
+  --write-expected
 
 Verify a SQL drill against its expected output (default mode, used in CI):
 
-    python check_sql.py \
-      --db data/chinook.db \
-      --sql pillar2/subqueries/drill01.sql \
-      --expected expected/subqueries/drill01.csv
+python3 scripts/check_sql.py \
+  --db 00_datasets/northwind.db \
+  --sql 01_subqueries/drill02.sql \
+  --expected tests/pillar2_analytical_sql/expected/01_subqueries/drill02.csv \
 
 Exit codes:
     0  success (output matches expected CSV)
