@@ -36,12 +36,12 @@ who have placed at least one order in 2020, using an `IN` subquery.
 
 -- Determine the inner query:
 -- Customers with at least one purchase in 2020
-
+/*
 SELECT DISTINCT CustomerID
 FROM Orders
 WHERE OrderDate >= '2020-01-01'
   AND OrderDate <  '2021-01-01';
-
+*/
 -- Define the outer query:
 -- Select complementary information for customers from customer table.
 
