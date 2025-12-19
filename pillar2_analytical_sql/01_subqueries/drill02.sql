@@ -32,7 +32,7 @@ WHERE UnitPrice > (
 
 -- Window function approach
 -- (Compute AVG once, attach it to every row, apply filter.)
-
+/*
 SELECT
     ProductID,
     UnitPrice
@@ -44,3 +44,4 @@ FROM (
     FROM Products
 )
 WHERE UnitPrice > avg_unit_price;
+*/

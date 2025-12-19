@@ -43,9 +43,12 @@ ORDER BY order_count DESC, CustomerID;
 
 
 
-/*Comparison to a JOIN: same output, but different logic*/
+/*
+--Comparison to a JOIN: same output, but different logic
+
 SELECT c.CustomerID, COUNT(O.OrderID) 
 FROM Customers c 
 LEFT JOIN Orders o 
     ON o.CustomerID = c.CustomerID
 GROUP BY c.CustomerID;
+*/
