@@ -17,7 +17,7 @@ the query logic):
 python3 scripts/check_sql.py \
   --db 00_datasets/northwind.db \
   --sql 01_subqueries/drill02.sql \
-  --expected tests/pillar2_analytical_sql/expected/01_subqueries/drill02.csv \
+  --expected tests/pillar2_analytical_sql/01_subqueries/drill02.csv \
   --write-expected
 
 Verify a SQL drill against its expected output (default mode, used in CI):
