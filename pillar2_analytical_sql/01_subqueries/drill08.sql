@@ -6,9 +6,10 @@ Build a derived table that calculates
  then select only customers whose revenue is **above the global average**.
 
 
--- Drill 08 — Subqueries: 
--- Business question: 
--- Expected output: 
+-- Drill 08 — Subqueries: Derived table subquery using FROM
+-- Business question: What's the total revenue per customer, 
+--                    for customers whose revenue is above the global average?
+-- Expected output: Customer_id, total_revenue
 -- Notes: 
 -- Tables used: Customers, Orders
 
@@ -35,7 +36,8 @@ Build a derived table that calculates
 13|ShipCountry|TEXT|0||0
  */
 
-
+/*
+-- Layer 1 (Derived table): Total revenue per customer
 
 SELECT
   o.CustomerID AS customer_id,
@@ -44,3 +46,33 @@ FROM Orders o
 JOIN "Order Details" od
   ON od.OrderID = o.OrderID
 GROUP BY o.CustomerID;
+
+-- Layer 2 (Scalar Subquery): Average of total_revenue over te per customer total revenues
+*/
+
+SELECT 
+  t.customer_id,
+  t.total_revenue
+FROM (
+  SELECT 
+    o.CustomerID AS customer_id,
+    SUM(od.Quantity * od.UnitPrice * (1 - od.Discount)) AS total_revenue
+  FROM Orders o
+  JOIN "Order Details" od
+  ON o.OrderID = od.OrderID
+  GROUP BY o.CustomerID
+) AS t
+WHERE t.total_revenue > (
+  SELECT AVG(t2.total_revenue)
+  FROM (
+    SELECT
+      o2.CustomerID AS customer_id,
+      SUM(od2.UnitPrice * od2.Quantity * (1 - od2.Discount)) AS total_revenue
+    FROM Orders o2
+    JOIN "Order Details" od2
+      ON od2.OrderID = o2.OrderID
+    GROUP BY o2.CustomerID
+  ) AS t2
+)
+
+ORDER BY t.total_revenue DESC;
