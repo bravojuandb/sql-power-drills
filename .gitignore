@@ -205,3 +205,5 @@ pillar_1/setup.sql.venv/
 
 archive/
 projects/
+
+.DS_Store
