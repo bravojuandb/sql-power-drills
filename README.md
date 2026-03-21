@@ -10,62 +10,47 @@
 
 — **Heraclitus**
 
-## Folder Structure
+## What This Repo Is
+
+`sql-power-drills` is a structured practice repository for building real SQL skill through repetition.
+
+It is currently focused on two foundations: query fluency and analytical SQL.
+
+The goal is not just to memorize syntax, but to develop the habits and problem-solving patterns used in real data work.
+
+
+## Current Scope
+
+This repository is currently focused on:
 
 ```bash
 sql-power-drills/
-│
 ├── pillar1_query_fluency/
-│
 ├── pillar2_analytical_sql/
-│
-├── pillar3_data_engineering_sql/
-│
-├── pillar4_performance/
-│
-├── pillar5_python_etl/
-│
-├── pillar6_orchestration/
-│
-├── pillar7_cloud_storage/
-│
-├── pillar8_pipeline_architecture/
-│
 └── README.md
 ```
 
-## Description of each Section
+## What Each Pillar Covers
 
-### [Pillar 1 — Query Fluency](pillar1_query_fluency/README.md)  
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)  
+### [Pillar 1 — Query Fluency](pillar1_query_fluency/README.md) 
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)  
 
-I use the [Chinook database](https://github.com/lerocha/chinook-database) for all drills in this section, running on the [SQLite](https://sqlite.org/index.html) engine.  
+Build comfort with core SQL syntax through short drills focused on writing correct queries with confidence.
 
-###  Pillar 2 — Analytical SQL 
-Use CTEs, subqueries, and window functions to answer business questions.  
-Develop multi-step, layered logic for reports and metrics.
+Topics include `SELECT`, `WHERE`, `ORDER BY`, aggregations, joins, and `NULL` handling.
 
-### Pillar 3 — Data Engineering SQL  
-Design schemas, enforce constraints, clean raw data, deduplicate, and load tables.  
-Build the warehouse structure that pipelines depend on.
+This pillar uses the [Chinook database](https://github.com/lerocha/chinook-database) on [SQLite](https://sqlite.org/index.html).  
 
-### Pillar 4 — Performance & Indexing  
-Understand how queries run.  
-Use EXPLAIN plans and indexes to improve speed, reduce scans, and avoid common anti-patterns.
+### [Pillar 2 — Analytical SQL](pillar2_analytical_sql/README.md) 
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)  
 
-### Pillar 5 — Python ETL Automation  
-Use Python to move, clean, and transform data.  
-Write ETL scripts, connect to databases, manage configs, and validate inputs.
+Develop analytical query thinking by breaking problems into layers and composing multi-step logic.
 
-### Pillar 6 — Orchestration & Scheduling  
-Run pipelines automatically and reliably.  
-Build DAG-style workflows with dependencies, retries, idempotency, and logging.
+Topics include subqueries, CTEs, window functions, conditional logic, cohort analysis, and top-N patterns.
 
-### Pillar 7 — Cloud Data Fundamentals  
-Store and move data in cloud environments.  
-Use object storage, IAM basics, and warehouse loading patterns safely and efficiently.
+This pillar uses the [Northwind database](https://github.com/jpwhite3/northwind-SQLite3) on [SQLite](https://sqlite.org/index.html).
 
-### Pillar 8 — Full Pipeline Architecture  
-Assemble complete systems:  
-raw → staging → clean → analytics layers, with data quality checks, modular structure, and documentation.
 
+## Planned Next Pillars
+
+Future expansions may include data engineering SQL, performance, ETL, orchestration, cloud storage, and pipeline architecture.
