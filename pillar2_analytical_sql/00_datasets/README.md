@@ -69,47 +69,67 @@ The Northwind SQL file is expected at:
 pillar2_analytical_sql/00_datasets/northwind.sql
 ```
 
-Before loading it, create a database named `northwind`:
+You can load the schema and data in two different ways:
+
+- Method 1 runs inside the `psql` shell and uses `CREATE DATABASE` plus `\i`
+- Method 2 runs from your terminal, outside `psql`
+
+### Method 1: Run the file inside `psql`
+
+First open a PostgreSQL session:
 
 ```bash
-createdb northwind
+psql postgres
 ```
 
-If the database already exists, you may see an error. That is fine as long as the `northwind` database is already available.
+You should now see the `psql` prompt.
 
-To confirm it exists:
+Create the database:
 
-```bash
-psql -lqt
+```sql
+CREATE DATABASE northwind;
 ```
 
-You can load the schema and data in two ways.
+Connect to it:
 
-### Interactive method inside `psql`
-
-Open the database:
-
-```bash
-psql -d northwind
+```sql
+\c northwind
 ```
 
-From inside `psql`, run:
+Then load the file from inside `psql`:
 
 ```sql
 \i pillar2_analytical_sql/00_datasets/northwind.sql
 ```
 
-This is useful if you want to stay in the PostgreSQL shell and inspect output as the file runs.
+This method is interactive because you are already inside `psql` when you execute the file.
 
-### Batch method from the terminal
+### Method 2: Run the file from the terminal, outside `psql`
 
-Run the SQL file directly from your shell, without opening `psql` interactively:
+Do not open `psql` first.
+
+Run this command directly in your terminal:
+
+```bash
+createdb northwind
+psql -d northwind -f pillar2_analytical_sql/00_datasets/northwind.sql
+```
+
+If the database already exists, `createdb northwind` may return an error. That is fine as long as the `northwind` database is already available.
+
+You can confirm that with:
+
+```bash
+psql -lqt
+```
+
+Or, if you already created the database earlier, you can run only:
 
 ```bash
 psql -d northwind -f pillar2_analytical_sql/00_datasets/northwind.sql
 ```
 
-This is useful when you want a quick one-command load from the command line.
+This method is non-interactive because the SQL file is executed directly from the shell.
 
 If the file loads successfully, PostgreSQL will print a series of statements as they execute.
 
