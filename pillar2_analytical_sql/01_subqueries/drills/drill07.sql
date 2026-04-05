@@ -4,7 +4,7 @@
 --                    subtotal for that same customer?
 -- Expected output: customer_id, company_name, order_id, order_subtotal
 -- Notes: SUM(UnitPrice * Quantity * (1 - Discount))
--- Tables used: Customers, Orders, Order Details
+-- Tables used: customers, orders, order_details
 
 
 /*
@@ -32,34 +32,34 @@
 */
 
 SELECT
-    o.CustomerID AS customer_id,
-    c.CompanyName AS company_name,
-    o.OrderID AS order_id,
+    o.customer_id,
+    c.company_name,
+    o.order_id,
     (
-        SELECT SUM(od.UnitPrice * od.Quantity * (1 - od.Discount))
-        FROM "Order Details" od
-        WHERE od.OrderID = o.OrderID
+        SELECT SUM(od.unit_price * od.quantity * (1 - od.discount))
+        FROM order_details od
+        WHERE od.order_id = o.order_id
     ) AS order_subtotal
-FROM Orders o
-JOIN Customers c
-  ON c.CustomerID = o.CustomerID
+FROM orders o
+JOIN customers c
+  ON c.customer_id = o.customer_id
 WHERE
     (
-        SELECT SUM(od.UnitPrice * od.Quantity * (1 - od.Discount))
-        FROM "Order Details" od
-        WHERE od.OrderID = o.OrderID
+        SELECT SUM(od.unit_price * od.quantity * (1 - od.discount))
+        FROM order_details od
+        WHERE od.order_id = o.order_id
     )
     >
     (
         SELECT AVG(order_total)
         FROM (
             SELECT
-                o2.OrderID,
-                SUM(od2.UnitPrice * od2.Quantity * (1 - od2.Discount)) AS order_total
-            FROM Orders o2
-            JOIN "Order Details" od2
-              ON od2.OrderID = o2.OrderID
-            WHERE o2.CustomerID = o.CustomerID
-            GROUP BY o2.OrderID
-        )
+                o2.order_id,
+                SUM(od2.unit_price * od2.quantity * (1 - od2.discount)) AS order_total
+            FROM orders o2
+            JOIN order_details od2
+              ON od2.order_id = o2.order_id
+            WHERE o2.customer_id = o.customer_id
+            GROUP BY o2.order_id
+        ) AS customer_orders
     );

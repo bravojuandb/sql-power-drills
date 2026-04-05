@@ -1,47 +1,35 @@
-/*
-
-Drill 2 --- Scalar subquery in `WHERE`
-
-List products whose unit price is above the average product price
-across the entire catalog.
-
-0|ProductID|INTEGER|1||1
-1|ProductName|TEXT|1||0
-2|SupplierID|INTEGER|0||0
-3|CategoryID|INTEGER|0||0
-4|QuantityPerUnit|TEXT|0||0
-5|UnitPrice|NUMERIC|0|0|0
-6|UnitsInStock|INTEGER|0|0|0
-7|UnitsOnOrder|INTEGER|0|0|0
-8|ReorderLevel|INTEGER|0|0|0
-9|Discontinued|TEXT|1|'0'|0
-
-*/
+-- Drill 02 — Scalar Subquery in WHERE
+-- Business question: Which products are priced above the average product price?
+-- Expected output: product_id, unit_price
+-- Notes: use a scalar subquery in the WHERE clause to compare each product price to the catalog average
+-- Tables used: products
 
 -- Scalar subquery (simplest approach)
 -- (Compute the AVG once, then filter rows)
 
-SELECT
-    ProductID,
-    UnitPrice
-FROM Products
-WHERE UnitPrice > (
-    SELECT AVG(UnitPrice)
-    FROM Products
+
+SELECT 
+	product_id,
+	unit_price
+FROM products
+WHERE unit_price > (
+    SELECT 
+        AVG(unit_price) 
+        FROM products
 );
 
 -- Window function approach
 -- (Compute AVG once, attach it to every row, apply filter.)
 /*
 SELECT
-    ProductID,
-    UnitPrice
+    product_id,
+    unit_price
 FROM (
     SELECT
-        ProductID,
-        UnitPrice,
-        AVG(UnitPrice) OVER () AS avg_unit_price
-    FROM Products
+        product_id,
+        unit_price,
+        AVG(unit_price) OVER () AS avg_unit_price
+    FROM products
 )
-WHERE UnitPrice > avg_unit_price;
+WHERE unit_price > avg_unit_price;
 */

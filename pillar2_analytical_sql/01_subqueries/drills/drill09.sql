@@ -1,10 +1,9 @@
-
--- Drill 09 — Subqueries: Customers who have purchsed a specific product.
+-- Drill 09 — Subqueries: Customers who have purchased a specific product
 -- Business question: Give me all the customers who bought product 37 (Chartreuse verte) 
 -- Expected output: customer_id
 -- Notes: Once using a subquery (IN or EXISTS), once using a JOIN.
 --        Verify that both approaches return the same result.
--- Tables used: Orders and Order Details
+-- Tables used: orders, order_details
 
 /*
 cid  name            type      notnull  dflt_value  pk
@@ -35,24 +34,24 @@ cid  name       type     notnull  dflt_value  pk
 
 /*
 SELECT DISTINCT
-    o.CustomerID AS customer_id
-FROM Orders o
-JOIN "Order Details" od
-ON o.OrderID = od.OrderID
-WHERE od.ProductID = 37
-ORDER BY o.CustomerID ASC;
+    o.customer_id
+FROM orders o
+JOIN order_details od
+  ON o.order_id = od.order_id
+WHERE od.product_id = 37
+ORDER BY o.customer_id ASC;
 */
 
 SELECT DISTINCT
-    o.CustomerID
-FROM Orders o
+    o.customer_id
+FROM orders o
 WHERE EXISTS (
     SELECT 1
-    FROM "Order Details" od
-    WHERE od.OrderID = o.OrderID
-      AND od.ProductID = 37
+    FROM order_details od
+    WHERE od.order_id = o.order_id
+      AND od.product_id = 37
 )
-ORDER BY o.CustomerID ASC;
+ORDER BY o.customer_id ASC;
 
 /*
 NOTES:
