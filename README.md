@@ -37,6 +37,15 @@ This repository is currently focused on:
 sql-power-drills/
 ├── pillar1_query_fluency/
 ├── pillar2_analytical_sql/
+│   ├── 00_datasets/
+│   ├── 01_subqueries/
+│   │   ├── drills/
+│   │   └── aggregation_subqueries/
+│   ├── 02_ctes/
+│   ├── 03_window_functions/
+│   ├── 04_conditional_logic/
+│   ├── scripts/
+│   └── tests/
 └── README.md
 ```
 

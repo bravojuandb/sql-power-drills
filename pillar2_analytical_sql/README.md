@@ -52,9 +52,15 @@ pillar2_analytical_sql/
 │   └── northwind.db
 │
 ├── 01_subqueries/
-│   ├── drill01.sql
-│   ├── ...
-│   ├── drillXX.sql
+│   ├── drills/
+│   │   ├── drill01.sql
+│   │   ├── ...
+│   │   └── drillXX.sql
+│   ├── aggregation_subqueries/
+│   │   ├── drill01.sql
+│   │   ├── ...
+│   │   ├── drillXX.sql
+│   │   └── README.md
 │   └── README.md
 │
 ├── 02_ctes/
@@ -80,7 +86,6 @@ pillar2_analytical_sql/
 │   ├── ...
 │   ├── drillXX.sql
 │   └── README.md
-│
 ├── 06_cohort/
 │   ├── drill01.sql
 │   ├── ...
@@ -125,5 +130,3 @@ Cohort grouping, retention logic and period-over-period comparisons.
 **7. Top-N & Per-Group Analysis**
 
 Top 1 per group, top N per category and filtering after window functions.
-
-
