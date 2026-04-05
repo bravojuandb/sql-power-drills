@@ -1,17 +1,14 @@
-/*
-
-### 8. Derived table subquery (`FROM`)
-Build a derived table that calculates 
-**total revenue per customer** (using `SUM(UnitPrice * Quantity * (1 - Discount))`),
- then select only customers whose revenue is **above the global average**.
-
-
 -- Drill 08 — Subqueries: Derived table subquery using FROM
 -- Business question: What's the total revenue per customer, 
 --                    for customers whose revenue is above the global average?
--- Expected output: Customer_id, total_revenue
+-- Expected output: customer_id, total_revenue
 -- Notes: 
--- Tables used: Customers, Orders
+-- Tables used: orders, order_details
+
+/*
+Build a derived table that calculates total revenue per customer
+using SUM(unit_price * quantity * (1 - discount)),
+then select only customers whose revenue is above the global average.
 
 
 0|OrderID|INTEGER|1||1
@@ -40,14 +37,14 @@ Build a derived table that calculates
 -- Layer 1 (Derived table): Total revenue per customer
 
 SELECT
-  o.CustomerID AS customer_id,
-  SUM(od.UnitPrice * od.Quantity * (1 - od.Discount)) AS total_revenue
-FROM Orders o
-JOIN "Order Details" od
-  ON od.OrderID = o.OrderID
-GROUP BY o.CustomerID;
+  o.customer_id,
+  SUM(od.unit_price * od.quantity * (1 - od.discount)) AS total_revenue
+FROM orders o
+JOIN order_details od
+  ON od.order_id = o.order_id
+GROUP BY o.customer_id;
 
--- Layer 2 (Scalar Subquery): Average of total_revenue over te per customer total revenues
+-- Layer 2 (Scalar Subquery): Average of total_revenue over the per-customer total revenues
 */
 
 SELECT 
@@ -55,23 +52,23 @@ SELECT
   t.total_revenue
 FROM (
   SELECT 
-    o.CustomerID AS customer_id,
-    SUM(od.Quantity * od.UnitPrice * (1 - od.Discount)) AS total_revenue
-  FROM Orders o
-  JOIN "Order Details" od
-  ON o.OrderID = od.OrderID
-  GROUP BY o.CustomerID
+    o.customer_id,
+    SUM(od.quantity * od.unit_price * (1 - od.discount)) AS total_revenue
+  FROM orders o
+  JOIN order_details od
+    ON o.order_id = od.order_id
+  GROUP BY o.customer_id
 ) AS t
 WHERE t.total_revenue > (
   SELECT AVG(t2.total_revenue)
   FROM (
     SELECT
-      o2.CustomerID AS customer_id,
-      SUM(od2.UnitPrice * od2.Quantity * (1 - od2.Discount)) AS total_revenue
-    FROM Orders o2
-    JOIN "Order Details" od2
-      ON od2.OrderID = o2.OrderID
-    GROUP BY o2.CustomerID
+      o2.customer_id,
+      SUM(od2.unit_price * od2.quantity * (1 - od2.discount)) AS total_revenue
+    FROM orders o2
+    JOIN order_details od2
+      ON od2.order_id = o2.order_id
+    GROUP BY o2.customer_id
   ) AS t2
 )
 

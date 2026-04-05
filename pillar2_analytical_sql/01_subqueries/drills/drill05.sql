@@ -1,9 +1,9 @@
 
--- Drill 05 — Subqueries: Suppliers that supply at least one product.
+-- Drill 05 — Subqueries: Suppliers that supply at least one product
 -- Business question: Does at least one row exist in Products for this supplier?
--- Expected output: supplier
+-- Expected output: supplier_id
 -- Notes: Use EXISTS rather than a join
--- Tables used: Suppliers, Products
+-- Tables used: suppliers, products
 
 /*
 
@@ -19,10 +19,10 @@ WHERE EXISTS (
 
 */
 
-SELECT SupplierID 
-FROM Suppliers s
+SELECT s.supplier_id
+FROM suppliers s
 WHERE EXISTS (  -- EXISTS evaluates row existence (at least one product row for this supplier)
     SELECT 1
-    FROM Products p
-    WHERE p.SupplierID = s.SupplierID
+    FROM products p
+    WHERE p.supplier_id = s.supplier_id
 );
