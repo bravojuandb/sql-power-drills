@@ -206,3 +206,6 @@ pillar_1/setup.sql.venv/
 archive/
 projects/
 .DS_store
+
+pillar2_analytical_sql/scripts/
+analytical_sql/tests/
