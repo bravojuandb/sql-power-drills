@@ -2,36 +2,34 @@
 
 ## How to run
 
-1. Check if SQLite is installed:
+1. Check if PostgreSQL is installed:
 ```
-sqlite3 --version
+psql --version
 ```
-2. If it is not installed, install it (macOS):
+2. Create a database for the Northwind dataset:
 ```
-brew install sqlite
+createdb northwind
 ```
-3. Open the Northwind database in the SQLite shell:
+3. Load the dataset:
 ```
-sqlite3 pillar2_analytical_sql/00_datasets/northwind.db
+psql -d northwind -f pillar2_analytical_sql/00_datasets/northwind.sql
 ```
-This opens an interactive SQLite session, and all commands now run against that database.
+4. Open a PostgreSQL session:
+```
+psql -d northwind
+```
 
-4. Check if the database loaded by listing the tables:
+5. Check if the database loaded by listing the relations:
 ```
-.tables
+\dt
 ```
-5. To print aligned results, run the following commands:
+6. Run any SQL file from inside `psql`:
 ```
-.headers on
-.mode column
+\i pillar2_analytical_sql/01_subqueries/drills/drill01.sql
 ```
-6. Run any SQL file (path is relative to where you launched sqlite3):
+7. Exit `psql`:
 ``` 
-.read 01_subqueries/drill01.sql
-``` 
-7. Exit SQLite:
-``` 
-.quit
+\q
 ``` 
 
 ## Folder structure
@@ -49,7 +47,7 @@ These README files describe the intent and expected output of each drill, but do
 ```bash
 pillar2_analytical_sql/
 ├── 00_datasets/
-│   └── northwind.db
+│   └── northwind.sql
 │
 ├── 01_subqueries/
 │   ├── drills/
