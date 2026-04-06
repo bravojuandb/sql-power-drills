@@ -4,6 +4,7 @@ This subchapter focuses on two linked skills:
 
 - choosing the right aggregation pattern for the question
 - developing careful habits for reading table grain before writing SQL
+- using subqueries to protect grain, stage aggregation, and compare grouped results
 
 The drills are designed to slow down the first step of analysis:
 What does one row represent here?
@@ -47,11 +48,12 @@ Before solving each drill, pause and identify:
 
 ---
 
-## Aggregation Drills
+## Aggregation Subquery Drills
 
 ### 1. Grain Check Before Aggregation
 Return the number of rows in `orders` and the number of rows in `order_details`.
 Then explain which table is at order grain and which table is at line-item grain.
+Use scalar subqueries so each table is counted independently before any join is even possible.
   
 Expected output: `orders_rows`, `order_details_rows`
 
@@ -61,14 +63,14 @@ For all orders, compute:
 - rows with a non-null `shipped_date`
 - rows with a non-null `customer_id`
 
-Use this drill to understand why `COUNT(*)` and `COUNT(column)` answer different questions.
+Use scalar subqueries to answer the three counting questions as separate checks.
   
 Expected output: `total_orders`, `shipped_orders`, `orders_with_customer`
 
 ### 3. Aggregate at the Correct Grain
 Return one row per customer with their total number of orders.
+Start from a grouped subquery on `orders`, then select from that derived result.
 Do not join `order_details`.
-Use the smallest set of tables needed for the question.
   
 Expected output: `customer_id`, `orders_count`
 
@@ -86,13 +88,13 @@ Expected output: `customer_id`, `avg_order_total`
 
 ### 6. Distinct Counting Habit
 Return the number of unique customers who placed at least one order in each calendar year.
-Be careful not to count multiple orders from the same customer more than once per year.
+First build a subquery with one row per `(order_year, customer_id)`, then count those rows by year.
   
 Expected output: `order_year`, `active_customers`
 
 ### 7. `WHERE` vs `HAVING`
 Return customers whose total revenue is greater than 5000.
-Use `WHERE` only for row-level filtering and `HAVING` only for group-level filtering.
+First compute one row per customer in a subquery, then filter the outer query on that grouped result.
   
 Expected output: `customer_id`, `customer_revenue`
 
@@ -105,7 +107,7 @@ Expected output: `product_id`, `total_quantity`
 ### 9. Weighted Revenue Thinking
 Return category revenue using `SUM(unit_price * quantity * (1 - discount))`.
 Do not use plain `AVG(unit_price)` as a proxy for performance.
-Use this drill to practice choosing a business metric that matches the question.
+First build a product-level revenue subquery, then roll those product revenues up to category level.
   
 Expected output: `category_id`, `category_name`, `category_revenue`
 
@@ -126,5 +128,6 @@ Expected output: `line_revenue_total`, `customer_revenue_total`
 - Identify the correct output grain before writing the query
 - Avoid unnecessary joins
 - Use subqueries when they protect the intended grain
+- Use at least one meaningful subquery or derived table in every drill
 - Distinguish row-level logic from group-level logic
 - Validate totals when a query is easy to misread
