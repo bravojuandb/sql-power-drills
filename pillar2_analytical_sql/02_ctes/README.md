@@ -2,7 +2,7 @@
 
 This subchapter focuses on **CTEs as a way to structure reasoning**.  
 You will use them to stage aggregations, break problems into readable steps, and reuse intermediate results.  
-All drills are written against the **Northwind base tables** (not views) in the local SQLite dataset used by this repo.
+All drills are written against the **Northwind base tables** (not views) used in Pillar 2.
 
 ---
 
@@ -27,7 +27,7 @@ Primary join paths used throughout:
 
 ## Verified Schema Notes
 
-The prompts below match the local SQLite Northwind database at `pillar2_analytical_sql/00_datasets/northwind.db`.
+The prompts below match the PostgreSQL Northwind schema used in this pillar.
 
 Verified table names used in this chapter:
 
@@ -50,7 +50,7 @@ Verified source columns used in these drills:
 Notes:
 
 - The output column names shown in the drills are **expected aliases**, not necessarily the original source column names.
-- The local SQL dump file also contains a snake_case schema, but these drills follow the SQLite Northwind naming convention shown above.
+- These drills should be kept consistent with the PostgreSQL schema conventions used across Pillar 2.
 
 ## CTE Drills
 
