@@ -25,7 +25,7 @@ psql -d northwind
 ```
 6. Run any SQL file from inside `psql`:
 ```
-\i pillar2_analytical_sql/01_subqueries/drills/drill01.sql
+\i pillar2_analytical_sql/01_subqueries/core_subqueries/drill01.sql
 ```
 7. Exit `psql`:
 ``` 
@@ -50,7 +50,7 @@ pillar2_analytical_sql/
 │   └── northwind.sql
 │
 ├── 01_subqueries/
-│   ├── drills/
+│   ├── core_subqueries/
 │   │   ├── drill01.sql
 │   │   ├── ...
 │   │   └── drillXX.sql
