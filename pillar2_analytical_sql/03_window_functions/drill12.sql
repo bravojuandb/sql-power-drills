@@ -1,0 +1,6 @@
+-- Drill 12 — Window Functions: Running total vs final total
+-- Business question: How does monthly revenue compare between a running total and the final total repeated on every row?
+-- Expected output: year_month, monthly_revenue, running_revenue, final_revenue_total
+-- Notes: compare a cumulative window with a full-partition window over monthly revenue
+-- Tables used: Orders, Order Details
+
