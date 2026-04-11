@@ -37,66 +37,66 @@ psql -d northwind
 The folder structure is intentionally layered to reflect analytical thinking and progressive SQL complexity:  
 
 - **First level:** Pillar folder → a major domain (Analytical SQL)
-- **Second level** Subcategories → building blocks (Selection, Filtering, Ordering…)
-- **Third level:** Drills (`drill01.sql` … `drillXX.sql`) → atomic queries  
+- **Second level:** Chapters → major analytical patterns (`subqueries`, `ctes`, `window_functions`, etc.)
+- **Third level:** Drills (`drill01.sql` … `drillXX.sql`) → atomic query exercises when implemented  
 
-Dedicated README files contain the name of each query, inside the respective subcategory.  
-These README files describe the intent and expected output of each drill, but do not provide solutions.
+Each chapter has a dedicated `README.md` that explains its focus, tables used, drill progression, and expected output shapes.
+Some chapters already include SQL drill files, while others currently contain the chapter scaffold and planned drill sequence.
 
 
 ```bash
 pillar2_analytical_sql/
 ├── 00_datasets/
-│   └── northwind.sql
+│   ├── northwind.sql
+│   └── README.md
 │
 ├── 01_subqueries/
+│   ├── README.md
 │   ├── core_subqueries/
 │   │   ├── drill01.sql
 │   │   ├── ...
-│   │   └── drillXX.sql
+│   │   └── drill09.sql
 │   ├── aggregation_subqueries/
 │   │   ├── drill01.sql
 │   │   ├── ...
-│   │   ├── drillXX.sql
+│   │   ├── drill10.sql
 │   │   └── README.md
-│   └── README.md
 │
 ├── 02_ctes/
 │   ├── drill01.sql
 │   ├── ...
-│   ├── drillXX.sql
+│   ├── drill12.sql
 │   └── README.md
 │
 ├── 03_window_functions/
-│   ├── drill01.sql
-│   ├── ...
-│   ├── drillXX.sql
 │   └── README.md
 │
 ├── 04_conditional_logic/
-│   ├── drill01.sql
-│   ├── ...
-│   ├── drillXX.sql
 │   └── README.md
 │
 ├── 05_multi_joins/
-│   ├── drill01.sql
-│   ├── ...
-│   ├── drillXX.sql
 │   └── README.md
+│
 ├── 06_cohort/
-│   ├── drill01.sql
-│   ├── ...
-│   ├── drillXX.sql
 │   └── README.md
+│
 ├── 07_top_n/
-│   ├── drill01.sql
-│   ├── ...
-│   ├── drillXX.sql
 │   └── README.md
+│
+├── tests/
+│   └── pillar2_analytical_sql/
+│
+├── scripts/
+│   └── check_sql.py
 │
 └── README.md
 ```
+
+## Current Status
+
+- `01_subqueries` is currently the most developed chapter, with drills in both `core_subqueries` and `aggregation_subqueries`.
+- `02_ctes` has a full first set of drill files.
+- `03_window_functions` through `07_top_n` currently have chapter README scaffolds and planned drill progressions, but not drill SQL files yet.
 
 ## Subjects Covered
 
