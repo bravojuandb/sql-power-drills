@@ -17,21 +17,29 @@
   </tr>
 </table>
 
-## What This Repo Is
+## Overview
 
-`sql-power-drills` is a structured practice repository for building SQL skills through repetition.
+`sql-power-drills` is a structured SQL practice repository designed to build skill through repetition, progression, and deliberate problem solving.
 
-The goal is not just to memorize syntax, but to develop the habits and problem-solving patterns used in real data work.
+The goal is not only to learn syntax, but to develop the habits used in real analytical work: reading table grain, choosing the right query pattern, and writing SQL that stays correct as questions become more complex.
 
-The repository is intentionally split across environments I called Pillars:
+The repository is organized into learning pillars. Each pillar uses a specific environment and focuses on a different layer of SQL development.
 
-- `Pillar 1` uses SQLite to keep setup light and make core query practice frictionless.
-- `Pillar 2` uses PostgreSQL as the primary environment for analytical SQL.
+## Who This Is For
 
+This repository is intended for:
 
-## Current Scope
+- learners building confidence with SQL through repeated practice
+- analysts who want more structure than isolated tutorial exercises
+- SQL users moving from basic query writing into analytical and multi-step problem solving
 
-This repository is currently focused on:
+## Start Here
+
+1. Choose a pillar based on the skill you want to practice.
+2. Follow that pillar's setup instructions and load the required dataset.
+3. Open the first drill in the chapter you want to work on and run it locally.
+
+## Repository Structure
 
 ```bash
 sql-power-drills/
@@ -44,35 +52,60 @@ sql-power-drills/
 │   ├── 02_ctes/
 │   ├── 03_window_functions/
 │   ├── 04_conditional_logic/
+│   ├── 05_multi_joins/
+│   ├── 06_cohort/
+│   ├── 07_top_n/
 │   ├── scripts/
 │   └── tests/
 └── README.md
 ```
 
-## What Each Pillar Covers
+## Pillars
 
-### [Pillar 1: Query Fluency](pillar1_query_fluency/README.md) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)  
+### [Pillar 1: Query Fluency](pillar1_query_fluency/README.md) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)
 
-Build comfort with core SQL syntax through short drills focused on writing correct queries with confidence.
+Pillar 1 focuses on core SQL fluency through short drills built to make query writing fast, correct, and comfortable.
 
 Topics include `SELECT`, `WHERE`, `ORDER BY`, aggregations, joins, and `NULL` handling.
 
-This pillar uses the [Chinook database](https://github.com/lerocha/chinook-database) on [SQLite](https://sqlite.org/index.html).  
+This pillar uses the [Chinook database](https://github.com/lerocha/chinook-database) with [SQLite](https://sqlite.org/index.html).
 
 ### [Pillar 2: Analytical SQL](pillar2_analytical_sql/README.md) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
 
-Develop analytical query thinking by breaking problems into layers and composing multi-step logic.
+Pillar 2 focuses on analytical SQL: breaking business questions into layers, controlling row grain, and composing multi-step logic that remains readable.
 
-Topics include subqueries, CTEs, window functions, conditional logic, cohort analysis, and top-N patterns.
+It is organized as a progression of chapters:
 
-This pillar is designed primarily for PostgreSQL using the [Northwind SQL dataset](pillar2_analytical_sql/00_datasets/northwind.sql).  
+- `01_subqueries`
+  - drill groups: `core_subqueries`, `aggregation_subqueries`
+- `02_ctes`
+- `03_window_functions`
+- `04_conditional_logic`
+- `05_multi_joins`
+- `06_cohort`
+- `07_top_n`
+
+The chapter sequence moves from foundational analytical patterns to more applied ones:
+
+- `01_subqueries` introduces scalar, set, existence, correlated, and aggregation-safe subqueries
+- `02_ctes` focuses on naming intermediate steps and structuring multi-stage transformations
+- `03_window_functions` focuses on ranking, running totals, moving averages, and row-to-row comparison
+- `04_conditional_logic` focuses on `CASE`, bucketing, flags, and conditional aggregates
+- `05_multi_joins` focuses on dimension enrichment and preserving grain across multi-hop joins
+- `06_cohort` focuses on retention, time-based grouping, and period-over-period analysis
+- `07_top_n` focuses on per-group ranking, latest-row logic, and filtering after ranking
+
+This pillar is designed primarily for PostgreSQL using the [Northwind SQL dataset](pillar2_analytical_sql/00_datasets/northwind.sql).
 
 PostgreSQL is the recommended engine for this pillar because it better supports the analytical patterns practiced here.
 
-You can run the queries with `psql` or a GUI such as `pgAdmin`.
+You can run the queries with `psql` or a GUI such as `pgAdmin`. Setup instructions are available in [the PostgreSQL dataset guide](pillar2_analytical_sql/00_datasets/README.md).
 
-You can find setup instructions in [the PostgreSQL dataset guide](pillar2_analytical_sql/00_datasets/README.md).
+## Current Status
 
-## Planned Next Pillars
+- `Pillar 1` is the lightweight entry point for core query practice.
+- `Pillar 2` is actively being expanded, with `01_subqueries` and `02_ctes` currently the most developed chapters.
+
+## Roadmap
 
 Future expansions may include data engineering SQL, performance, ETL, orchestration, cloud storage, and pipeline architecture.
