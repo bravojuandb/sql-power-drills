@@ -39,7 +39,7 @@ sql-power-drills/
 ├── pillar2_analytical_sql/
 │   ├── 00_datasets/
 │   ├── 01_subqueries/
-│   │   ├── drills/
+│   │   ├── core_subqueries/
 │   │   └── aggregation_subqueries/
 │   ├── 02_ctes/
 │   ├── 03_window_functions/
