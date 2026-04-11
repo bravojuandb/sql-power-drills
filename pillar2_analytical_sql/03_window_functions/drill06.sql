@@ -1,0 +1,6 @@
+-- Drill 06 — Window Functions: Running revenue total by month
+-- Business question: How does cumulative revenue grow month by month?
+-- Expected output: year_month, monthly_revenue, running_revenue
+-- Notes: aggregate to one row per month before applying the running-total window
+-- Tables used: Orders, Order Details
+

@@ -1,0 +1,6 @@
+-- Drill 09 — Window Functions: Next order date with LEAD()
+-- Business question: What is the next order date for each order within the same customer's history?
+-- Expected output: customer_id, order_id, order_date, next_order_date
+-- Notes: use LEAD() partitioned by customer and ordered by OrderDate
+-- Tables used: Orders
+
