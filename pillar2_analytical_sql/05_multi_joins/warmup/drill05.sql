@@ -1,0 +1,5 @@
+-- Drill 05 — Multi-Join Warmup: Enriched order lines
+-- Business question: What product and category does each order line belong to?
+-- Expected output: order_id, product_id, product_name, category_name, quantity
+-- Notes: start from "Order Details", then join Products and Categories
+-- Tables used: "Order Details", Products, Categories
