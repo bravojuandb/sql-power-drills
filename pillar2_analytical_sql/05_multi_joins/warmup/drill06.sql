@@ -1,0 +1,5 @@
+-- Drill 06 — Multi-Join Warmup: Products with or without sales
+-- Business question: How much total quantity has each product sold, including products with no sales?
+-- Expected output: product_id, product_name, total_quantity
+-- Notes: use a LEFT JOIN so unsold products still appear
+-- Tables used: Products, "Order Details"

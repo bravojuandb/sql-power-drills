@@ -1,0 +1,5 @@
+-- Drill 01 — Multi-Join Warmup: Customer orders
+-- Business question: Which customer placed each order?
+-- Expected output: customer_id, company_name, order_id, order_date
+-- Notes: join Customers to Orders and return one row per order
+-- Tables used: Customers, Orders
