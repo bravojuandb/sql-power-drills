@@ -198,14 +198,17 @@ cython_debug/
 pillar_1/easy/db_setup.sql
 
 drills.db
+
+# Project directories
+archive/
+tests/
+scripts/
+projects/
+pillar2_analytical_sql/scripts/
+pillar2_analytical_sql/tests/
+
+# Local files
 pillar1-easy.db
 pillar_1/run_sqlite.sh
 pillar_1/setup.sql.venv/
-
-
-archive/
-projects/
-.DS_store
-
-pillar2_analytical_sql/scripts/
-analytical_sql/tests/
+.DS_Store
