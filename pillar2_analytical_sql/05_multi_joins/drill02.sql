@@ -1,0 +1,5 @@
+-- Drill 02 — Multi-Join Analytical Patterns: Order line enrichment
+-- Business question: What product, category, and supplier information belongs to each order line?
+-- Expected output: order_id, product_id, product_name, category_name, supplier_name, quantity
+-- Notes: keep one row per order line while joining through Products to Categories and Suppliers
+-- Tables used: "Order Details", Products, Categories, Suppliers

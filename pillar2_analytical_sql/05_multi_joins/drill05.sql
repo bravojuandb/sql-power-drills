@@ -1,0 +1,5 @@
+-- Drill 05 — Multi-Join Analytical Patterns: Employee category sales
+-- Business question: How much revenue has each employee generated in each product category?
+-- Expected output: employee_id, employee_name, category_id, category_name, category_revenue
+-- Notes: join Orders to Employees, then continue through "Order Details", Products, and Categories
+-- Tables used: Employees, Orders, "Order Details", Products, Categories
