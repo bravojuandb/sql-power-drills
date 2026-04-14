@@ -16,20 +16,20 @@ The drills here keep the scope intentionally narrow:
 
 These warmup drills mainly rely on:
 
-- `Customers`
-- `Orders`
-- `"Order Details"`
-- `Products`
-- `Categories`
-- `Suppliers`
+- `customers`
+- `orders`
+- `order_details`
+- `products`
+- `categories`
+- `suppliers`
 
 Primary join paths used in this warmup:
 
-- `Customers -> Orders`
-- `Orders -> "Order Details"`
-- `"Order Details" -> Products`
-- `Products -> Categories`
-- `Products -> Suppliers`
+- `customers -> orders`
+- `orders -> order_details`
+- `order_details -> products`
+- `products -> categories`
+- `products -> suppliers`
 
 ---
 
@@ -47,27 +47,27 @@ Before solving each drill, pause and identify:
 ## Drill Progression
 
 ### 1. Customer Orders
-Join `Customers` to `Orders` and return one row per order with customer information attached.
+Join `customers` to `orders` and return one row per order with customer information attached.
 
 Expected output: `customer_id`, `company_name`, `order_id`, `order_date`
 
 ### 2. Order Lines
-Join `Orders` to `"Order Details"` and return one row per order line.
+Join `orders` to `order_details` and return one row per order line.
 
 Expected output: `order_id`, `order_date`, `product_id`, `quantity`, `unit_price`
 
 ### 3. Product Categories
-Join `Products` to `Categories` and return product names with their category names.
+Join `products` to `categories` and return product names with their category names.
 
 Expected output: `product_id`, `product_name`, `category_id`, `category_name`
 
 ### 4. Product Suppliers
-Join `Products` to `Suppliers` and return product names with their supplier names.
+Join `products` to `suppliers` and return product names with their supplier names.
 
 Expected output: `product_id`, `product_name`, `supplier_id`, `supplier_name`
 
 ### 5. Enriched Order Lines
-Follow the path from `"Order Details"` to `Products` and `Categories` so each order line includes the product and category.
+Follow the path from `order_details` to `products` and `categories` so each order line includes the product and category.
 
 Expected output: `order_id`, `product_id`, `product_name`, `category_name`, `quantity`
 
