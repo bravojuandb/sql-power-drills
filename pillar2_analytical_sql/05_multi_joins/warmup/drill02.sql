@@ -1,5 +1,5 @@
 -- Drill 02 — Multi-Join Warmup: Order lines
--- Business question: What line items belong to each order?
+-- Business question: For each order line, when was the order placed?
 -- Expected output: order_id, order_date, product_id, quantity, unit_price
--- Notes: join Orders to "Order Details" and keep one row per order line
--- Tables used: Orders, "Order Details"
+-- Notes: start from order_details grain and join the parent order information
+-- Tables used: orders, order_details

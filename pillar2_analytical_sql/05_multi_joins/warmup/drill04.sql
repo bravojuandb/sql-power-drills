@@ -1,5 +1,5 @@
 -- Drill 04 — Multi-Join Warmup: Product suppliers
 -- Business question: Which supplier provides each product?
 -- Expected output: product_id, product_name, supplier_id, supplier_name
--- Notes: join Products to Suppliers
--- Tables used: Products, Suppliers
+-- Notes: join products to suppliers
+-- Tables used: products, suppliers

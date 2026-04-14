@@ -1,5 +1,5 @@
 -- Drill 03 — Multi-Join Warmup: Product categories
 -- Business question: Which category does each product belong to?
 -- Expected output: product_id, product_name, category_id, category_name
--- Notes: join Products to Categories
--- Tables used: Products, Categories
+-- Notes: join products to categories
+-- Tables used: products, categories
