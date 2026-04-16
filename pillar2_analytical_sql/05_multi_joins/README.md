@@ -10,24 +10,24 @@ All drills are written against the **Northwind base tables** used throughout Pil
 
 These drills mainly rely on:
 
-- `Customers`
-- `Orders`
-- `"Order Details"`
-- `Products`
-- `Categories`
-- `Suppliers`
-- `Employees`
-- `Shippers`
+- `customers`
+- `orders`
+- `order_details`
+- `products`
+- `categories`
+- `suppliers`
+- `employees`
+- `shippers`
 
 Primary join paths used throughout:
 
-- `Customers -> Orders`
-- `Orders -> "Order Details"`
-- `"Order Details" -> Products`
-- `Products -> Categories`
-- `Products -> Suppliers`
-- `Orders -> Employees`
-- `Orders -> Shippers`
+- `customers -> orders`
+- `orders -> order_details`
+- `order_details -> products`
+- `products -> categories`
+- `products -> suppliers`
+- `orders -> employees`
+- `orders -> shippers`
 
 ---
 

@@ -1,5 +1,5 @@
 -- Drill 03 — Multi-Join Analytical Patterns: Customer revenue by category
 -- Business question: How much revenue has each customer generated in each product category?
 -- Expected output: customer_id, category_id, category_name, customer_category_revenue
--- Notes: follow the join path from Customers to Categories through Orders, "Order Details", and Products
--- Tables used: Customers, Orders, "Order Details", Products, Categories
+-- Notes: follow the join path from customers to categories through orders, order_details, and products
+-- Tables used: customers, orders, order_details, products, categories

@@ -2,7 +2,7 @@
 -- Business question: Which customer, employee, and shipper are associated with each order?
 -- Expected output: order_id, customer_id, company_name, employee_name, shipper_name, order_date
 -- Notes: return one row per order and enrich it with names from the related dimension tables
--- Tables used: Orders, Customers, Employees, Shippers
+-- Tables used: orders, customers, employees, shippers
 
 SELECT 
     o.order_id,

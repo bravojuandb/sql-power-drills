@@ -2,4 +2,4 @@
 -- Business question: How many unique customers bought at least one product from each supplier?
 -- Expected output: supplier_id, supplier_name, unique_customers
 -- Notes: count distinct customers after joining through orders and order details
--- Tables used: Suppliers, Products, "Order Details", Orders
+-- Tables used: suppliers, products, order_details, orders

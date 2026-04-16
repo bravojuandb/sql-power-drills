@@ -2,4 +2,4 @@
 -- Business question: What are revenue and order count by month, category, and shipper?
 -- Expected output: year_month, category_id, shipper_id, revenue, orders_count
 -- Notes: build an enriched order-line dataset first, then aggregate to the requested reporting grain
--- Tables used: Orders, "Order Details", Products, Categories, Shippers
+-- Tables used: orders, order_details, products, categories, shippers

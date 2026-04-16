@@ -2,4 +2,4 @@
 -- Business question: What is the total sold quantity for each product, including unsold products?
 -- Expected output: product_id, product_name, total_quantity
 -- Notes: use a LEFT JOIN so products with no matching order lines still appear
--- Tables used: Products, "Order Details"
+-- Tables used: products, order_details
