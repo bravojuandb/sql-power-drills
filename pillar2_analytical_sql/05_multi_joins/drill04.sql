@@ -2,7 +2,6 @@
 -- Business question: How many unique customers bought at least one product from each supplier?
 -- Expected output: supplier_id, supplier_name, unique_customers
 -- Notes: count distinct customers after joining through orders and order details
-<<<<<<< HEAD
 -- Tables used: suppliers, products, order_details, orders
 
 SELECT 
@@ -18,6 +17,3 @@ JOIN suppliers s
 	ON s.supplier_id = p.supplier_id
 GROUP BY s.supplier_id, s.company_name
 ORDER BY unique_customers DESC;
-=======
--- Tables used: Suppliers, Products, "Order Details", Orders
->>>>>>> main
