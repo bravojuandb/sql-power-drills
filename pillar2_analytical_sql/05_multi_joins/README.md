@@ -104,6 +104,18 @@ This is a capstone drill for combining dimensions safely.
 
 Expected output: `year_month`, `category_id`, `shipper_id`, `revenue`, `orders_count`
 
+### 11. Customer-Supplier Relationship Matrix
+Return one row per customer and supplier pair showing how much revenue the customer generated for that supplier.
+Be careful to count orders at the correct grain while summing order-line revenue.
+
+Expected output: `customer_id`, `company_name`, `supplier_id`, `supplier_name`, `supplier_revenue`, `orders_count`
+
+### 12. Shipper Category Performance
+Build a shipped-orders summary by shipper and category.
+Include revenue and average days to ship, using only orders that have actually shipped.
+
+Expected output: `shipper_id`, `shipper_name`, `category_id`, `category_name`, `shipped_orders`, `avg_days_to_ship`, `category_revenue`
+
 ---
 
 ## Completion Criteria

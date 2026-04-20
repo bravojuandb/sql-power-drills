@@ -1,0 +1,5 @@
+-- Drill 11 — Multi-Join Analytical Patterns: Customer-supplier relationship matrix
+-- Business question: How much revenue did each customer generate for each supplier, and across how many distinct orders?
+-- Expected output: customer_id, company_name, supplier_id, supplier_name, supplier_revenue, orders_count
+-- Notes: aggregate to one row per customer and supplier pair, and count distinct orders at that same reporting grain
+-- Tables used: customers, orders, order_details, products, suppliers

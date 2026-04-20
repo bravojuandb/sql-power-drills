@@ -1,0 +1,5 @@
+-- Drill 12 — Multi-Join Analytical Patterns: Shipper category performance
+-- Business question: For shipped orders only, how do shippers perform by product category in terms of revenue and shipping speed?
+-- Expected output: shipper_id, shipper_name, category_id, category_name, shipped_orders, avg_days_to_ship, category_revenue
+-- Notes: preserve the shipper-category grain, use only shipped orders, and compute average shipping time from order_date to shipped_date
+-- Tables used: orders, order_details, products, categories, shippers
