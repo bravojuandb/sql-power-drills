@@ -1,6 +1,5 @@
 -- Drill 08 — Window Functions: Previous order date with LAG()
 -- Business question: What was the previous order date for each order within the same customer's history?
 -- Expected output: customer_id, order_id, order_date, previous_order_date
--- Notes: use LAG() partitioned by customer and ordered by OrderDate
--- Tables used: Orders
-
+-- Notes: use LAG() partitioned by customer and ordered by order_date, order_id
+-- Tables used: orders
