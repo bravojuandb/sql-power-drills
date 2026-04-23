@@ -3,3 +3,12 @@
 -- Expected output: order_id, customer_id, order_date, row_num
 -- Notes: use ROW_NUMBER() without PARTITION BY; break same-day ties with order_id
 -- Tables used: orders
+
+SELECT
+	order_id,
+	customer_id,
+	order_date,
+	ROW_NUMBER() OVER(
+		ORDER BY order_date, order_id
+	) AS row_num
+FROM orders;
