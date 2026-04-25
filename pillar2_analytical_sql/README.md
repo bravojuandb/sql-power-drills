@@ -75,6 +75,9 @@ pillar2_analytical_sql/
 │   └── README.md
 │
 ├── 05_multi_joins/
+│   ├── warmup/
+│   ├── core_multi_joins/
+│   ├── business_questions/
 │   └── README.md
 │
 ├── 06_cohort/
@@ -96,7 +99,9 @@ pillar2_analytical_sql/
 
 - `01_subqueries` is currently the most developed chapter, with drills in both `core_subqueries` and `aggregation_subqueries`.
 - `02_ctes` has a full first set of drill files.
-- `03_window_functions` through `07_top_n` currently have chapter README scaffolds and planned drill progressions, but not drill SQL files yet.
+- `03_window_functions` has a full first set of drill files.
+- `05_multi_joins` has warmup drills, core multi-join drills, and business-question prompt drills.
+- `04_conditional_logic`, `06_cohort`, and `07_top_n` currently have chapter README scaffolds and planned drill progressions.
 
 ## Subjects Covered
 
