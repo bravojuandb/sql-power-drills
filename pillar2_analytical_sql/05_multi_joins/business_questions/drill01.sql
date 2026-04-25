@@ -6,4 +6,35 @@
 --        Count distinct orders so multi-line orders do not inflate the order count.
 -- Tables used: customers, orders, order_details, products, categories
 
--- Write your query below.
+WITH line_totals AS (
+	SELECT 
+		order_id,
+		product_id,
+		SUM(unit_price * quantity * (1 - discount)) AS line_total
+	FROM order_details
+	GROUP BY order_id, product_id
+)
+SELECT 
+	cat.category_id,
+	cat.category_name,
+	cus.customer_id,
+	cus.company_name,
+	SUM(lt.line_total) AS category_revenue,
+	COUNT(DISTINCT o.order_id) AS orders_count
+FROM line_totals lt
+JOIN products p
+	ON p.product_id = lt.product_id
+JOIN categories cat
+	ON cat.category_id = p.category_id
+JOIN orders o
+	ON o.order_id = lt.order_id
+JOIN customers cus
+	ON o.customer_id = cus.customer_id
+GROUP BY
+	cat.category_id,
+	cat.category_name,
+	cus.customer_id,
+	cus.company_name
+ORDER BY 
+	cat.category_id,
+	category_revenue DESC;
