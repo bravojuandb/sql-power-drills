@@ -4,7 +4,7 @@
 -- Notes: include enough columns to make the row realistic and consistent with the table design from chapter 01
 -- Tables used: customers
 
-INSERT INTO p3.customers (first_name, last_name, email, phone_number, address)
+INSERT INTO customers (first_name, last_name, email, phone_number, address)
 VALUES
     ('Socrates', 'Questionmaster', 'socrates@agora.gr', '+30 000 000 001', 'Under a suspicious olive tree'),
     ('Plato', 'CaveEscapee', 'plato@academy.gr', '+30 000 000 002', 'The Academy, probably judging shadows'),
