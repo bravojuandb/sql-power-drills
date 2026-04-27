@@ -47,6 +47,7 @@ Some chapters already include SQL drill files, while others currently contain th
 ```bash
 pillar2_analytical_sql/
 ├── 00_datasets/
+│   ├── northwind.db
 │   ├── northwind.sql
 │   └── README.md
 │
@@ -69,6 +70,9 @@ pillar2_analytical_sql/
 │   └── README.md
 │
 ├── 03_window_functions/
+│   ├── drill01.sql
+│   ├── ...
+│   ├── drill12.sql
 │   └── README.md
 │
 ├── 04_conditional_logic/
@@ -76,21 +80,28 @@ pillar2_analytical_sql/
 │
 ├── 05_multi_joins/
 │   ├── warmup/
+│   │   ├── drill01.sql
+│   │   ├── ...
+│   │   ├── drill06.sql
+│   │   └── README.md
 │   ├── core_multi_joins/
+│   │   ├── drill01.sql
+│   │   ├── ...
+│   │   ├── drill12.sql
+│   │   └── README.md
 │   ├── business_questions/
+│   │   ├── drill01.sql
+│   │   ├── ...
+│   │   ├── drill12.sql
+│   │   └── README.md
 │   └── README.md
 │
-├── 06_cohort/
+├── 06_applied_analytical_patterns/
+│   ├── cohort_analysis/
+│   │   └── README.md
+│   ├── top_n_per_group/
+│   │   └── README.md
 │   └── README.md
-│
-├── 07_top_n/
-│   └── README.md
-│
-├── tests/
-│   └── pillar2_analytical_sql/
-│
-├── scripts/
-│   └── check_sql.py
 │
 └── README.md
 ```
@@ -101,7 +112,7 @@ pillar2_analytical_sql/
 - `02_ctes` has a full first set of drill files.
 - `03_window_functions` has a full first set of drill files.
 - `05_multi_joins` has warmup drills, core multi-join drills, and business-question prompt drills.
-- `04_conditional_logic`, `06_cohort`, and `07_top_n` currently have chapter README scaffolds and planned drill progressions.
+- `04_conditional_logic` and `06_applied_analytical_patterns` currently have chapter README scaffolds and planned drill progressions.
 
 ## Subjects Covered
 
@@ -126,10 +137,6 @@ CASE expressions, bucketing and conditional aggregates.
 
 Dimension enrichment, multi-hop joins and star-schema style analysis.
 
-**6. Cohort & Time-Based Analysis**
+**6. Applied Analytical Patterns**
 
-Cohort grouping, retention logic and period-over-period comparisons.
-
-**7. Top-N & Per-Group Analysis**
-
-Top 1 per group, top N per category and filtering after window functions.
+Cohort analysis, top-N per group, latest-row logic, retention patterns and period-over-period comparisons.
