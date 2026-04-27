@@ -72,7 +72,7 @@ sql-power-drills/
 
 ### [Pillar 1: Query Fluency](pillar1_query_fluency/README.md) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)
 
-Pillar 1 focuses on core SQL fluency through short drills built to make query writing fast, correct, and comfortable.
+This is simple core `SQL fluency` through short drills built to make query writing fast, correct, and comfortable.
 
 Topics include `SELECT`, `WHERE`, `ORDER BY`, aggregations, joins, and `NULL` handling.
 
@@ -80,17 +80,7 @@ This pillar uses the [Chinook database](https://github.com/lerocha/chinook-datab
 
 ### [Pillar 2: Analytical SQL](pillar2_analytical_sql/README.md) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
 
-Pillar 2 focuses on analytical SQL: breaking business questions into layers, controlling row grain, and composing multi-step logic that remains readable.
-
-It is organized as a progression of chapters:
-
-- `01_subqueries`
-  - drill groups: `core_subqueries`, `aggregation_subqueries`
-- `02_ctes`
-- `03_window_functions`
-- `04_conditional_logic`
-- `05_multi_joins`
-- `06_applied_analytical_patterns`
+It focuses on `analytical SQL`: breaking business questions into layers, controlling row grain, and composing multi-step logic that remains readable.
 
 The chapter sequence moves from foundational analytical patterns to more applied ones:
 
@@ -109,17 +99,9 @@ You can run the queries with `psql` or a GUI such as `pgAdmin`. Setup instructio
 
 ### [Pillar 3: Data Engineering SQL](pillar3_data_engineering_sql/README.md) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
 
-Pillar 3 focuses on operational and data engineering SQL: creating schemas, changing data safely, managing transactions, loading staged data, enforcing quality rules, and understanding basic performance tradeoffs.
+The focus here is `operational SQL` and `data engineering SQL`: creating schemas, changing data safely, managing transactions, loading staged data, enforcing quality rules, and understanding basic performance tradeoffs.
 
-It is organized as a progression of chapters:
-
-- `01_ddl_schema_design`
-- `02_insert_update_delete`
-- `03_transactions`
-- `04_upserts_and_merge`
-- `05_staging_and_etl_patterns`
-- `06_constraints_and_data_quality`
-- `07_indexes_and_performance_basics`
+Unlike Pillar 2, which uses the prebuilt Northwind dataset for analysis practice, Pillar 3 is meant to be practiced by creating and evolving your own database objects from scratch, including tables, relationships, constraints, and data changes.
 
 The chapter sequence moves from structural database work to reliable data movement:
 
@@ -136,7 +118,7 @@ This pillar is designed primarily for PostgreSQL because it supports the operati
 ## Current Status
 
 - `Pillar 1` is the lightweight entry point for core query practice.
-- `Pillar 2` is actively being expanded, with `01_subqueries` and `02_ctes` currently the most developed chapters.
+- `Pillar 2` is actively being expanded, with `01_subqueries`, `02_ctes` and `05_multi_joins` currently the most developed chapters.
 - `Pillar 3` currently contains the data engineering SQL structure and planned drill prompts.
 
 ## Roadmap
