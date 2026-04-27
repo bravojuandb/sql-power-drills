@@ -9,9 +9,10 @@ Levels of organization:
 - **Level 3:** Drills (`drill01.sql` … `drill30.sql`) → atomic exercises  
 
 ```bash
-pillar1/
+pillar1_query_fluency/
 ├── 00_datasets/
-│   └── Chinook.sqlite
+│   ├── Chinook_Sqlite.sqlite
+│   └── README.md
 │
 ├── 01_selection/
 │   ├── drill01.sql
@@ -27,6 +28,9 @@ pillar1/
 │
 ├── 03_ordering/
 │   ├── drill01.sql
+│   ├── ...
+│   ├── drill24.sql
+│   ├── drill26.sql
 │   ├── ...
 │   ├── drill30.sql
 │   └── README.md
@@ -78,5 +82,4 @@ INNER JOIN and LEFT JOIN.
 **6. NULL Logic**
 
 IS NULL, IS NOT NULL and COALESCE.
-
 

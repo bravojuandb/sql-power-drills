@@ -53,10 +53,18 @@ sql-power-drills/
 │   ├── 03_window_functions/
 │   ├── 04_conditional_logic/
 │   ├── 05_multi_joins/
-│   ├── 06_cohort/
-│   ├── 07_top_n/
-│   ├── scripts/
-│   └── tests/
+│   └── 06_applied_analytical_patterns/
+│       ├── cohort_analysis/
+│       └── top_n_per_group/
+├── pillar3_data_engineering_sql/
+│   ├── 00_datasets/
+│   ├── 01_ddl_schema_design/
+│   ├── 02_insert_update_delete/
+│   ├── 03_transactions/
+│   ├── 04_upserts_and_merge/
+│   ├── 05_staging_and_etl_patterns/
+│   ├── 06_constraints_and_data_quality/
+│   └── 07_indexes_and_performance_basics/
 └── README.md
 ```
 
@@ -82,8 +90,7 @@ It is organized as a progression of chapters:
 - `03_window_functions`
 - `04_conditional_logic`
 - `05_multi_joins`
-- `06_cohort`
-- `07_top_n`
+- `06_applied_analytical_patterns`
 
 The chapter sequence moves from foundational analytical patterns to more applied ones:
 
@@ -92,8 +99,7 @@ The chapter sequence moves from foundational analytical patterns to more applied
 - `03_window_functions` focuses on ranking, running totals, moving averages, and row-to-row comparison
 - `04_conditional_logic` focuses on `CASE`, bucketing, flags, and conditional aggregates
 - `05_multi_joins` focuses on dimension enrichment and preserving grain across multi-hop joins
-- `06_cohort` focuses on retention, time-based grouping, and period-over-period analysis
-- `07_top_n` focuses on per-group ranking, latest-row logic, and filtering after ranking
+- `06_applied_analytical_patterns` combines earlier skills into cohort analysis, top-N per group, latest-row logic, retention, and period-over-period analysis
 
 This pillar is designed primarily for PostgreSQL using the [Northwind SQL dataset](pillar2_analytical_sql/00_datasets/northwind.sql).
 
@@ -101,11 +107,38 @@ PostgreSQL is the recommended engine for this pillar because it better supports 
 
 You can run the queries with `psql` or a GUI such as `pgAdmin`. Setup instructions are available in [the PostgreSQL dataset guide](pillar2_analytical_sql/00_datasets/README.md).
 
+### [Pillar 3: Data Engineering SQL](pillar3_data_engineering_sql/README.md) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
+
+Pillar 3 focuses on operational and data engineering SQL: creating schemas, changing data safely, managing transactions, loading staged data, enforcing quality rules, and understanding basic performance tradeoffs.
+
+It is organized as a progression of chapters:
+
+- `01_ddl_schema_design`
+- `02_insert_update_delete`
+- `03_transactions`
+- `04_upserts_and_merge`
+- `05_staging_and_etl_patterns`
+- `06_constraints_and_data_quality`
+- `07_indexes_and_performance_basics`
+
+The chapter sequence moves from structural database work to reliable data movement:
+
+- `01_ddl_schema_design` introduces tables, column types, keys, defaults, and schema evolution
+- `02_insert_update_delete` focuses on safe data changes and preview-before-write habits
+- `03_transactions` focuses on grouping changes, rollback, savepoints, and recovery
+- `04_upserts_and_merge` focuses on idempotent loads and source-to-target synchronization
+- `05_staging_and_etl_patterns` focuses on raw staging, cleaning, deduplication, and promotion
+- `06_constraints_and_data_quality` focuses on protecting tables with constraints and validation queries
+- `07_indexes_and_performance_basics` focuses on lookup patterns, query plans, and indexing tradeoffs
+
+This pillar is designed primarily for PostgreSQL because it supports the operational SQL patterns practiced here, including transactions, constraints, indexes, `INSERT ... ON CONFLICT`, and `MERGE`.
+
 ## Current Status
 
 - `Pillar 1` is the lightweight entry point for core query practice.
 - `Pillar 2` is actively being expanded, with `01_subqueries` and `02_ctes` currently the most developed chapters.
+- `Pillar 3` currently contains the data engineering SQL structure and planned drill prompts.
 
 ## Roadmap
 
-Future expansions may include data engineering SQL, performance, ETL, orchestration, cloud storage, and pipeline architecture.
+Future expansions may include orchestration, cloud storage, warehouse modeling, pipeline architecture, and more advanced performance tuning.
