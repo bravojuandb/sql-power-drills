@@ -1,0 +1,5 @@
+-- Drill 05 — INSERT, UPDATE & DELETE: Update many rows by business rule
+-- Business question: How would you update a set of rows based on a clear condition such as stale status, empty email, or inactive accounts?
+-- Expected outcome: an UPDATE statement with a business-rule WHERE clause
+-- Notes: keep the rule easy to explain and preview before running the write
+-- Tables used: customers

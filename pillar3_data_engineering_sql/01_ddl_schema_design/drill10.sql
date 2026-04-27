@@ -1,0 +1,5 @@
+-- Drill 10 — DDL & Schema Design: Design a clean final table
+-- Business question: How would you redesign the raw feed into a clean target table with stricter types and better constraints?
+-- Expected outcome: a CREATE TABLE statement for a cleaned target table that represents the same feed with stronger typing
+-- Notes: contrast this with the raw version by choosing proper numerics, dates, keys, and nullable rules
+-- Tables used: none

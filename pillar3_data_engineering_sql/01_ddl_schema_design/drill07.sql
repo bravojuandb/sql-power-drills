@@ -1,0 +1,5 @@
+-- Drill 07 — DDL & Schema Design: Create a lookup table and connect it
+-- Business question: How would you normalize repeated status values into a lookup table and link them back to a transactional table?
+-- Expected outcome: CREATE TABLE statements for a lookup table and a foreign-key column added to the related table
+-- Notes: use a small lookup such as order_statuses or customer_tiers and connect it to a fact-like table
+-- Tables used: orders

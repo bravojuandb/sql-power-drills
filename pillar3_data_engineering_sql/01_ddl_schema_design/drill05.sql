@@ -1,0 +1,5 @@
+-- Drill 05 — DDL & Schema Design: Rename a column
+-- Business question: How would you rename a column to improve clarity while preserving the existing data?
+-- Expected outcome: an ALTER TABLE statement that renames a column in place
+-- Notes: pick a realistic rename such as fullname to full_name or created to created_at
+-- Tables used: customers

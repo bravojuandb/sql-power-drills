@@ -1,0 +1,5 @@
+-- Drill 01 — INSERT, UPDATE & DELETE: Insert one customer row
+-- Business question: How would you insert a single customer row while satisfying all required columns?
+-- Expected outcome: an INSERT statement that adds one customer record
+-- Notes: include enough columns to make the row realistic and consistent with the table design from chapter 01
+-- Tables used: customers

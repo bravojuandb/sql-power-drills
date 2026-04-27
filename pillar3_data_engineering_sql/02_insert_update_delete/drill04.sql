@@ -1,0 +1,5 @@
+-- Drill 04 — INSERT, UPDATE & DELETE: Update one row by primary key
+-- Business question: How would you update a single customer's status with a precise primary-key filter?
+-- Expected outcome: an UPDATE statement that changes one row and only one row
+-- Notes: verify the target row with a SELECT first if you want to reinforce write safety habits
+-- Tables used: customers

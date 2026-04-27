@@ -1,0 +1,5 @@
+-- Drill 06 — DDL & Schema Design: Change a column type safely
+-- Business question: How would you change a column type after first checking whether current values can be converted cleanly?
+-- Expected outcome: a validation query plus an ALTER TABLE statement that changes a column type safely
+-- Notes: a classic practice case is converting a text column to numeric or date once bad values have been identified
+-- Tables used: customers
