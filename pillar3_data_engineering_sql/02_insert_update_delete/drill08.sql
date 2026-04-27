@@ -1,0 +1,5 @@
+-- Drill 08 — INSERT, UPDATE & DELETE: Delete duplicate staging rows
+-- Business question: How would you remove duplicate rows from a staging table while preserving one survivor per duplicate group?
+-- Expected outcome: a DELETE pattern that keeps one row and removes the extras
+-- Notes: common solutions stage duplicates with ROW_NUMBER() in a CTE before deleting rows where the row number is greater than 1
+-- Tables used: raw_customers

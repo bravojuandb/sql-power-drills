@@ -1,0 +1,5 @@
+-- Drill 09 — INSERT, UPDATE & DELETE: Preview an UPDATE with SELECT
+-- Business question: How would you preview exactly which rows an UPDATE will affect before running the write?
+-- Expected outcome: a SELECT statement that uses the same filter logic planned for a later UPDATE
+-- Notes: return the key columns plus the columns you expect to change so the preview is easy to inspect
+-- Tables used: customers

@@ -1,0 +1,5 @@
+-- Drill 03 — DDL & Schema Design: Add a nullable column safely
+-- Business question: How would you add a new optional column to an existing table without breaking the current rows?
+-- Expected outcome: an ALTER TABLE statement that adds a nullable column to an existing table
+-- Notes: use a column that could reasonably arrive later, such as phone_number or marketing_opt_in_at
+-- Tables used: customers

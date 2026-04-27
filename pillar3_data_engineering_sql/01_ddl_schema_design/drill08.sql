@@ -1,0 +1,5 @@
+-- Drill 08 — DDL & Schema Design: Drop a temporary table carefully
+-- Business question: How would you remove a temporary practice table only after confirming nothing depends on it?
+-- Expected outcome: a dependency-check step plus a DROP TABLE statement for a temporary table
+-- Notes: the point is the workflow: inspect first, then drop intentionally
+-- Tables used: none

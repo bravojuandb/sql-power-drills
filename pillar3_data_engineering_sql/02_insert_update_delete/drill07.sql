@@ -1,0 +1,5 @@
+-- Drill 07 — INSERT, UPDATE & DELETE: Delete one test row
+-- Business question: How would you remove a known bad or temporary row using a precise key filter?
+-- Expected outcome: a DELETE statement targeting a single row by primary key
+-- Notes: write the matching SELECT first so you can confirm the intended row before deleting it
+-- Tables used: customers

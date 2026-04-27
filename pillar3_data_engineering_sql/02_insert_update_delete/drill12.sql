@@ -1,0 +1,5 @@
+-- Drill 12 — INSERT, UPDATE & DELETE: Compare row counts before and after a change
+-- Business question: How would you verify the impact of a write by checking row counts around the operation?
+-- Expected outcome: a before-and-after validation pattern that compares counts for the affected slice of data
+-- Notes: focus on the relevant subset, not only the whole table, so the validation actually proves the change
+-- Tables used: customers

@@ -1,0 +1,5 @@
+-- Drill 04 — DDL & Schema Design: Add a defaulted status column
+-- Business question: How would you add a status column so future inserts automatically receive a sensible default?
+-- Expected outcome: an ALTER TABLE statement that adds a status column with a default, followed by INSERT examples that rely on the default
+-- Notes: make the default explicit and choose a status that would make sense for new rows, such as active or pending
+-- Tables used: customers

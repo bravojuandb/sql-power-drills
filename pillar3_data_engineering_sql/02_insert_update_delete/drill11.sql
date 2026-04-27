@@ -1,0 +1,5 @@
+-- Drill 11 — INSERT, UPDATE & DELETE: Inspect changed rows with RETURNING
+-- Business question: How would you capture the rows affected by a write statement instead of trusting the change blindly?
+-- Expected outcome: an INSERT, UPDATE, or DELETE statement that uses RETURNING to show the changed rows
+-- Notes: choose one write type and return the key columns plus the values that matter for validation
+-- Tables used: customers

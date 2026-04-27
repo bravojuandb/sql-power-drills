@@ -1,0 +1,5 @@
+-- Drill 09 — DDL & Schema Design: Design a raw ingest table
+-- Business question: How would you model a raw landing table for a feed where every incoming value arrives as text?
+-- Expected outcome: a CREATE TABLE statement for a raw staging table with loosely typed text columns
+-- Notes: favor traceability and load tolerance over strict typing at this stage
+-- Tables used: none

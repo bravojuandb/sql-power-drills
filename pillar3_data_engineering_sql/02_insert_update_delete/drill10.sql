@@ -1,0 +1,5 @@
+-- Drill 10 — INSERT, UPDATE & DELETE: Preview a DELETE with SELECT
+-- Business question: How would you preview exactly which rows a DELETE will remove before running it?
+-- Expected outcome: a SELECT statement that mirrors the WHERE clause planned for a later DELETE
+-- Notes: this drill is about discipline: prove the target set first, then delete
+-- Tables used: raw_customers

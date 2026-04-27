@@ -1,0 +1,5 @@
+-- Drill 02 — DDL & Schema Design: Create an orders table with a foreign key
+-- Business question: How would you define an orders table that belongs to customers and preserves referential integrity?
+-- Expected outcome: a CREATE TABLE statement for orders with its own primary key and a foreign key to customers
+-- Notes: include an order date and a status-like column so the table feels operational, not purely theoretical
+-- Tables used: customers

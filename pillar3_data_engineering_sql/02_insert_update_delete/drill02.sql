@@ -1,0 +1,5 @@
+-- Drill 02 — INSERT, UPDATE & DELETE: Insert multiple product rows
+-- Business question: How would you load several new rows in one statement instead of issuing separate inserts?
+-- Expected outcome: a single INSERT statement with multiple VALUES tuples
+-- Notes: use a compact seed-data example with a small products or statuses table
+-- Tables used: products

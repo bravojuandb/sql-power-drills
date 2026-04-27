@@ -1,0 +1,5 @@
+-- Drill 06 — INSERT, UPDATE & DELETE: Convert blanks to NULL
+-- Business question: How would you normalize blank strings into NULL values in a staging table before downstream loading?
+-- Expected outcome: an UPDATE statement that replaces blank or whitespace-only strings with NULL
+-- Notes: be explicit about which columns are being cleaned and whether TRIM() is needed
+-- Tables used: raw_customers
