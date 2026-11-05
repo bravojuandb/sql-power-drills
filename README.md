@@ -35,6 +35,10 @@ This repository is intended for:
 
 ## Start Here
 
+The main ongoing practice lives in [`business_questions/`](business_questions/README.md): one business question per session on the Northwind dataset (PostgreSQL), solved, reviewed and recorded with the first attempt kept for comparison.
+
+The pillars are a topic-based curriculum for targeted drills:
+
 1. Choose a pillar based on the skill you want to practice.
 2. Follow that pillar's setup instructions and load the required dataset.
 3. Open the first drill in the chapter you want to work on and run it locally.
@@ -43,6 +47,9 @@ This repository is intended for:
 
 ```bash
 sql-power-drills/
+├── business_questions/        # dated business question sessions (Northwind, PostgreSQL)
+│   ├── _template.sql
+│   └── README.md
 ├── pillar1_query_fluency/
 ├── pillar2_analytical_sql/
 │   ├── 00_datasets/
