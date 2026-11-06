@@ -13,33 +13,30 @@ Unlike the pillars, which are organized by SQL topic, this folder is organized b
 
 Trial and error stays in pgAdmin. The file keeps the submitted solution unedited: the gap between it and the final version is the record of progress.
 
-## File naming
+## Levels and file naming
+
+Each session goes in the folder of its level, named by date:
 
 ```
-YYYY-MM-DD_short-slug.sql
+business_questions/<level_folder>/YYYY-MM-DD_short-slug.sql
 ```
 
-Example: `2026-11-05_top-customers-by-revenue.sql`. If there is more than one session on the same day, add a suffix: `2026-11-05b_...`.
+Example: `01_easy/2026-11-05_top-customers-by-revenue.sql`. For a second session on the same day: `2026-11-05b_...`. Sessions are not necessarily daily; the date only keeps them in order.
 
-Sessions are not necessarily daily; the date only keeps them in order.
-
-## Levels
-
-| Level | Typical shape |
-|-------|---------------|
-| `easy` | One or two tables, filters, `GROUP BY`, simple joins, top-N lists, totals and counts. |
-| `medium` | Multi-table joins with grain control, CTEs, conditional aggregates, period comparisons, basic window functions. |
-| `advanced` | Cohorts, retention, running totals, ranking within groups, period-over-period growth, multi-step analyses with edge cases. |
+| Folder | Level | Typical shape |
+|--------|-------|---------------|
+| `01_easy` | easy | One or two tables, filters, `GROUP BY`, top-N lists, totals and counts. |
+| `02_easy_plus` | easy+ | Simple joins across 2–3 tables, `HAVING`, basic date filtering, `CASE` labels. |
+| `03_medium` | medium | Multi-table joins with grain control, CTEs, conditional aggregates, date bucketing. |
+| `04_medium_plus` | medium+ | Window functions (ranking, running totals), period comparisons, multi-step CTEs. |
+| `05_advanced` | advanced | Cohorts, retention, period-over-period growth, multi-step analyses with edge cases. |
 
 Progression is gradual: stay at a level until it feels comfortable, then move up.
 
 ## Finding past sessions by topic
 
-Each file declares its topics and level in the header:
-
 ```bash
-grep -l "Topics:.*window functions" business_questions/*.sql
-grep -l "Level:     medium" business_questions/*.sql
+grep -rl "Topics:.*window functions" business_questions/
 ```
 
 ## Setup

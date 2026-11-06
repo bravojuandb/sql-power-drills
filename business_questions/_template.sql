@@ -1,5 +1,5 @@
 -- Date:      YYYY-MM-DD
--- Level:     easy | medium | advanced
+-- Level:     easy | easy+ | medium | medium+ | advanced
 -- Topics:    e.g. aggregation, joins, ctes, window functions
 -- Dataset:   Northwind (PostgreSQL)
 --
