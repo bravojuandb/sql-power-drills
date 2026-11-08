@@ -6,6 +6,8 @@ Personal SQL practice repository. The main ongoing activity is **business questi
 
 Triggered when the user asks for a question. Repository files are written in English.
 
+**Each session is timeboxed to ~20 minutes** (question → solution → review → notes → commit). Size questions to fit, keep reviews short and focused on what matters, and do not push follow-up analyses or deeper digging; at most mention a follow-up in one line as a possible future question.
+
 ### 1. Propose a question
 
 - Dataset: **Northwind on PostgreSQL** (database `northwind`, schema `public`).
