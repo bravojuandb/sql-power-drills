@@ -2,7 +2,7 @@
 
 This subchapter focuses on **window functions as a way to analyze rows without collapsing them**.  
 You will use them to rank, compare, accumulate, and look across neighboring rows while preserving row-level detail.  
-All drills are written against the **Northwind base tables** used throughout Pillar 2.s
+All drills are written against the **Northwind base tables** used throughout Pillar 2.
 
 ---
 

@@ -104,15 +104,26 @@ pillar2_analytical_sql/
 │   │   └── README.md
 │   └── README.md
 │
+├── _template.sql
 └── README.md
+```
+
+## Drill file format
+
+New drills start from [`_template.sql`](_template.sql): a header with the business question, its context, the expected grain and columns, followed by a `SOLUTION` section and optional `PROCESS NOTES`. Drills solved before this template keep their original short header.
+
+The `Solved:` field holds `not yet` until the drill is done, then the date. To list the pending drills:
+
+```bash
+grep -rl --include='drill*.sql' "Solved:.*not yet" pillar2_analytical_sql/
 ```
 
 ## Current Status
 
 - `01_subqueries` is currently the most developed chapter, with drills in both `core_subqueries` and `aggregation_subqueries`.
 - `02_ctes` has a full first set of drill files.
-- `03_window_functions` has a full first set of drill files.
-- `05_multi_joins` has warmup drills, core multi-join drills, and business-question prompt drills.
+- `03_window_functions` has 12 drill files: 4 are solved, the rest contain the prompt only.
+- `05_multi_joins` has solved warmup and core multi-join drills; of its 12 business-question drills, 2 are solved and the rest contain the prompt only.
 - `04_conditional_logic` and `06_applied_analytical_patterns` currently have chapter README scaffolds and planned drill progressions.
 
 ## Subjects Covered

@@ -26,8 +26,8 @@ See [`business_questions/README.md`](business_questions/README.md) for the sessi
 | Pillar | Focus | Engine and dataset | Status |
 |--------|-------|--------------------|--------|
 | [1: Query Fluency](pillar1_query_fluency/README.md) | `SELECT`, `WHERE`, `ORDER BY`, aggregations, joins, `NULL` handling | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white) [Chinook](https://github.com/lerocha/chinook-database) | 6 chapters, about 30 drills each |
-| [2: Analytical SQL](pillar2_analytical_sql/README.md) | Subqueries, CTEs, window functions, conditional logic, multi-joins, applied patterns | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white) Northwind | Drills in `01`, `02`, `03` and `05`; `04` and `06` are planned |
-| [3: Data Engineering SQL](pillar3_data_engineering_sql/README.md) | DDL, data changes, transactions, upserts, staging, constraints, indexes | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white) your own schemas | Drills in `01` and `02`; `03` to `07` are planned |
+| [2: Analytical SQL](pillar2_analytical_sql/README.md) | Subqueries, CTEs, window functions, conditional logic, multi-joins, applied patterns | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white) Northwind | `01` and `02` solved; `03` and `05` in progress; `04` and `06` planned |
+| [3: Data Engineering SQL](pillar3_data_engineering_sql/README.md) | DDL, data changes, transactions, upserts, staging, constraints, indexes | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white) your own schemas | `01` and `02` started, mostly unsolved prompts; `03` to `07` planned |
 
 Each pillar README lists its chapters, how to run the drills, and its current status. To practice a topic, pick the pillar, load its dataset, and open the first drill of the chapter.
 

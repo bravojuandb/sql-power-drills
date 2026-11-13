@@ -10,20 +10,20 @@ All drills are written against the **Northwind base tables** used throughout Pil
 
 These drills mainly rely on:
 
-- `Customers`
-- `Orders`
-- `"Order Details"`
-- `Products`
-- `Categories`
-- `Shippers`
+- `customers`
+- `orders`
+- `order_details`
+- `products`
+- `categories`
+- `shippers`
 
 Primary join paths used throughout:
 
-- `Customers -> Orders`
-- `Orders -> "Order Details"`
-- `"Order Details" -> Products`
-- `Products -> Categories`
-- `Orders -> Shippers`
+- `customers -> orders`
+- `orders -> order_details`
+- `order_details -> products`
+- `products -> categories`
+- `orders -> shippers`
 
 ---
 
@@ -42,7 +42,7 @@ Before solving each drill, pause and identify:
 ## Conditional Logic Drills
 
 ### 1. Basic `CASE` Labeling
-Return orders with a shipping status label based on whether `ShippedDate` is null.
+Return orders with a shipping status label based on whether `shipped_date` is null.
 
 Expected output: `order_id`, `customer_id`, `shipping_status`
 
@@ -64,7 +64,7 @@ Expected output: `shipper_id`, `shipper_name`, `shipped_orders`, `unshipped_orde
 
 ### 5. Conditional `SUM`
 Compute total revenue from discounted lines and non-discounted lines separately.
-Use conditional aggregation on `"Order Details"`.
+Use conditional aggregation on `order_details`.
 
 Expected output: `discounted_revenue`, `full_price_revenue`
 
