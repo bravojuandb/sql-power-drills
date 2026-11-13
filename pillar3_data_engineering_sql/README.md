@@ -64,13 +64,24 @@ pillar3_data_engineering_sql/
 ├── 07_indexes_and_performance_basics/
 │   └── README.md
 │
+├── _template.sql
 └── README.md
+```
+
+## Drill file format
+
+New drills start from [`_template.sql`](_template.sql): a header with the scenario, the expected outcome and a `Verify with` check that proves the change worked, followed by a `SOLUTION` section and optional `PROCESS NOTES`. Drills solved before this template keep their original short header.
+
+The `Solved:` field holds `not yet` until the drill is done, then the date. To list the pending drills:
+
+```bash
+grep -rl --include='drill*.sql' "Solved:.*not yet" pillar3_data_engineering_sql/
 ```
 
 ## Current Status
 
-- `01_ddl_schema_design` has 10 drill files.
-- `02_insert_update_delete` has 12 drill files.
+- `01_ddl_schema_design` has 10 drill files: 3 are solved, the rest contain the prompt only.
+- `02_insert_update_delete` has 12 drill files: 1 is solved, the rest contain the prompt only.
 - `03_transactions` to `07_indexes_and_performance_basics` currently have chapter READMEs with planned drill prompts only.
 
 ## Subjects Covered
