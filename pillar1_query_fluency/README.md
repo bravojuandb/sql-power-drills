@@ -73,7 +73,7 @@ ORDER BY, ASC/DESC and LIMIT.
 
 **4. Aggregations**
 
-COUNT, SUM, AVG, MIN, MAX, GORUP BY and HAVING.
+COUNT, SUM, AVG, MIN, MAX, GROUP BY and HAVING.
 
 **5. Joins**
 

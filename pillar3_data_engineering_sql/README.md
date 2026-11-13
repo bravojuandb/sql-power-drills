@@ -30,7 +30,7 @@ The folder structure separates operational SQL skills from analytical query-writ
 
 - **First level:** Pillar folder -> a major domain (Data Engineering SQL)
 - **Second level:** Chapters -> practical data engineering responsibilities
-- **Third level:** Future drills (`drill01.sql` ... `drillXX.sql`) -> hands-on exercises when implemented
+- **Third level:** Drills (`drill01.sql` ... `drillXX.sql`) -> hands-on exercises, where implemented
 
 ```bash
 pillar3_data_engineering_sql/
@@ -38,9 +38,15 @@ pillar3_data_engineering_sql/
 │   └── README.md
 │
 ├── 01_ddl_schema_design/
+│   ├── drill01.sql
+│   ├── ...
+│   ├── drill10.sql
 │   └── README.md
 │
 ├── 02_insert_update_delete/
+│   ├── drill01.sql
+│   ├── ...
+│   ├── drill12.sql
 │   └── README.md
 │
 ├── 03_transactions/
@@ -63,9 +69,9 @@ pillar3_data_engineering_sql/
 
 ## Current Status
 
-This pillar currently contains the chapter structure and planned drill prompts only.
-
-No drill SQL files have been created yet.
+- `01_ddl_schema_design` has 10 drill files.
+- `02_insert_update_delete` has 12 drill files.
+- `03_transactions` to `07_indexes_and_performance_basics` currently have chapter READMEs with planned drill prompts only.
 
 ## Subjects Covered
 

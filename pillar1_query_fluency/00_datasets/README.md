@@ -1,4 +1,4 @@
-# Chinook Datanase
+# Chinook Database
 
 ## Tables
 

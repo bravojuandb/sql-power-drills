@@ -1,133 +1,50 @@
-# sql-power-drills
+<h1 align="center">sql-power-drills</h1>
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      Καλλίστη ἁρμονίη<br>
-      ἀφανὴς<br>
-      φανερῆς ἀρείων.<br><br>
-      <strong>— Ἡράκλειτος</strong>
-    </td>
-    <td width="50%" valign="top">
-      <em>The finest harmony<br>
-      is the hidden,<br>
-      better than the visible.</em><br><br>
-      <strong>— Heraclitus</strong>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  Καλλίστη ἁρμονίη ἀφανὴς φανερῆς ἀρείων<br>
+  <em>The finest harmony is the hidden, better than the visible.</em><br>
+  <sub>— Heraclitus</sub>
+</p>
 
 ## Overview
 
-`sql-power-drills` is a structured SQL practice repository designed to build skill through repetition, progression, and deliberate problem solving.
+`sql-power-drills` is a personal SQL practice repository. The goal is not only to learn syntax, but to build the habits of real analytical work: reading table grain, choosing the right query pattern, and writing SQL that stays correct as questions get more complex.
 
-The goal is not only to learn syntax, but to develop the habits used in real analytical work: reading table grain, choosing the right query pattern, and writing SQL that stays correct as questions become more complex.
+It has two parts:
 
-The repository is organized into learning pillars. Each pillar uses a specific environment and focuses on a different layer of SQL development.
+- **[Business questions](business_questions/README.md)**: the main ongoing practice. One stakeholder-style question per session, organized by date and level.
+- **Pillars**: a topic-based curriculum of short drills, used for targeted practice and as reference.
 
-## Who This Is For
+## Business Questions
 
-This repository is intended for:
+Each session answers one business question on the Northwind dataset (PostgreSQL): the question is proposed, solved in pgAdmin, reviewed, and recorded in a dated file. The first submitted solution is kept unedited next to the final version, so the gap between them is the record of progress.
 
-- learners building confidence with SQL through repeated practice
-- analysts who want more structure than isolated tutorial exercises
-- SQL users moving from basic query writing into analytical and multi-step problem solving
+See [`business_questions/README.md`](business_questions/README.md) for the session workflow, levels and file naming.
 
-## Start Here
+## Pillars
 
-The main ongoing practice lives in [`business_questions/`](business_questions/README.md): one business question per session on the Northwind dataset (PostgreSQL), solved, reviewed and recorded with the first attempt kept for comparison.
+| Pillar | Focus | Engine and dataset | Status |
+|--------|-------|--------------------|--------|
+| [1: Query Fluency](pillar1_query_fluency/README.md) | `SELECT`, `WHERE`, `ORDER BY`, aggregations, joins, `NULL` handling | ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white) [Chinook](https://github.com/lerocha/chinook-database) | 6 chapters, about 30 drills each |
+| [2: Analytical SQL](pillar2_analytical_sql/README.md) | Subqueries, CTEs, window functions, conditional logic, multi-joins, applied patterns | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white) Northwind | Drills in `01`, `02`, `03` and `05`; `04` and `06` are planned |
+| [3: Data Engineering SQL](pillar3_data_engineering_sql/README.md) | DDL, data changes, transactions, upserts, staging, constraints, indexes | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white) your own schemas | Drills in `01` and `02`; `03` to `07` are planned |
 
-The pillars are a topic-based curriculum for targeted drills:
-
-1. Choose a pillar based on the skill you want to practice.
-2. Follow that pillar's setup instructions and load the required dataset.
-3. Open the first drill in the chapter you want to work on and run it locally.
+Each pillar README lists its chapters, how to run the drills, and its current status. To practice a topic, pick the pillar, load its dataset, and open the first drill of the chapter.
 
 ## Repository Structure
 
 ```bash
 sql-power-drills/
-├── business_questions/        # dated business question sessions (Northwind, PostgreSQL)
-│   ├── _template.sql
-│   └── README.md
-├── pillar1_query_fluency/
-├── pillar2_analytical_sql/
-│   ├── 00_datasets/
-│   ├── 01_subqueries/
-│   │   ├── core_subqueries/
-│   │   └── aggregation_subqueries/
-│   ├── 02_ctes/
-│   ├── 03_window_functions/
-│   ├── 04_conditional_logic/
-│   ├── 05_multi_joins/
-│   └── 06_applied_analytical_patterns/
-│       ├── cohort_analysis/
-│       └── top_n_per_group/
-├── pillar3_data_engineering_sql/
-│   ├── 00_datasets/
-│   ├── 01_ddl_schema_design/
-│   ├── 02_insert_update_delete/
-│   ├── 03_transactions/
-│   ├── 04_upserts_and_merge/
-│   ├── 05_staging_and_etl_patterns/
-│   ├── 06_constraints_and_data_quality/
-│   └── 07_indexes_and_performance_basics/
+├── business_questions/            # dated business question sessions (Northwind, PostgreSQL)
+├── pillar1_query_fluency/         # core query drills (Chinook, SQLite)
+├── pillar2_analytical_sql/        # analytical drills (Northwind, PostgreSQL)
+├── pillar3_data_engineering_sql/  # schema, data change and pipeline drills (PostgreSQL)
+├── archive/                       # older exercises, kept for history and not maintained
 └── README.md
 ```
 
-## Pillars
+## Setup
 
-### [Pillar 1: Query Fluency](pillar1_query_fluency/README.md) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)
-
-This is simple core `SQL fluency` through short drills built to make query writing fast, correct, and comfortable.
-
-Topics include `SELECT`, `WHERE`, `ORDER BY`, aggregations, joins, and `NULL` handling.
-
-This pillar uses the [Chinook database](https://github.com/lerocha/chinook-database) with [SQLite](https://sqlite.org/index.html).
-
-### [Pillar 2: Analytical SQL](pillar2_analytical_sql/README.md) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
-
-It focuses on `analytical SQL`: breaking business questions into layers, controlling row grain, and composing multi-step logic that remains readable.
-
-The chapter sequence moves from foundational analytical patterns to more applied ones:
-
-- `01_subqueries` introduces scalar, set, existence, correlated, and aggregation-safe subqueries
-- `02_ctes` focuses on naming intermediate steps and structuring multi-stage transformations
-- `03_window_functions` focuses on ranking, running totals, moving averages, and row-to-row comparison
-- `04_conditional_logic` focuses on `CASE`, bucketing, flags, and conditional aggregates
-- `05_multi_joins` focuses on dimension enrichment and preserving grain across multi-hop joins
-- `06_applied_analytical_patterns` combines earlier skills into cohort analysis, top-N per group, latest-row logic, retention, and period-over-period analysis
-
-This pillar is designed primarily for PostgreSQL using the [Northwind SQL dataset](pillar2_analytical_sql/00_datasets/northwind.sql).
-
-PostgreSQL is the recommended engine for this pillar because it better supports the analytical patterns practiced here.
-
-You can run the queries with `psql` or a GUI such as `pgAdmin`. Setup instructions are available in [the PostgreSQL dataset guide](pillar2_analytical_sql/00_datasets/README.md).
-
-### [Pillar 3: Data Engineering SQL](pillar3_data_engineering_sql/README.md) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white)
-
-The focus here is `operational SQL` and `data engineering SQL`: creating schemas, changing data safely, managing transactions, loading staged data, enforcing quality rules, and understanding basic performance tradeoffs.
-
-Unlike Pillar 2, which uses the prebuilt Northwind dataset for analysis practice, Pillar 3 is meant to be practiced by creating and evolving your own database objects from scratch, including tables, relationships, constraints, and data changes.
-
-The chapter sequence moves from structural database work to reliable data movement:
-
-- `01_ddl_schema_design` introduces tables, column types, keys, defaults, and schema evolution
-- `02_insert_update_delete` focuses on safe data changes and preview-before-write habits
-- `03_transactions` focuses on grouping changes, rollback, savepoints, and recovery
-- `04_upserts_and_merge` focuses on idempotent loads and source-to-target synchronization
-- `05_staging_and_etl_patterns` focuses on raw staging, cleaning, deduplication, and promotion
-- `06_constraints_and_data_quality` focuses on protecting tables with constraints and validation queries
-- `07_indexes_and_performance_basics` focuses on lookup patterns, query plans, and indexing tradeoffs
-
-This pillar is designed primarily for PostgreSQL because it supports the operational SQL patterns practiced here, including transactions, constraints, indexes, `INSERT ... ON CONFLICT`, and `MERGE`.
-
-## Current Status
-
-- `Pillar 1` is the lightweight entry point for core query practice.
-- `Pillar 2` is actively being expanded, with `01_subqueries`, `02_ctes` and `05_multi_joins` currently the most developed chapters.
-- `Pillar 3` currently contains the data engineering SQL structure and planned drill prompts.
-
-## Roadmap
-
-Future expansions may include orchestration, cloud storage, warehouse modeling, pipeline architecture, and more advanced performance tuning.
+- **Northwind on PostgreSQL** (business questions and Pillar 2): follow the [dataset guide](pillar2_analytical_sql/00_datasets/README.md), then run queries with `psql` or a GUI such as pgAdmin.
+- **Chinook on SQLite** (Pillar 1): the database file and its table reference are in [`pillar1_query_fluency/00_datasets/`](pillar1_query_fluency/00_datasets/README.md).
+- **Pillar 3** has no shared dataset: you create and evolve your own tables in a disposable local database, as described in its [README](pillar3_data_engineering_sql/README.md).
