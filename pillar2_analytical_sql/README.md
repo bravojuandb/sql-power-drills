@@ -56,7 +56,8 @@ pillar2_analytical_sql/
 │   ├── core_subqueries/
 │   │   ├── drill01.sql
 │   │   ├── ...
-│   │   └── drill09.sql
+│   │   ├── drill09.sql
+│   │   └── README.md
 │   ├── aggregation_subqueries/
 │   │   ├── drill01.sql
 │   │   ├── ...
