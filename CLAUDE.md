@@ -38,7 +38,7 @@ Triggered when the user asks for a question. Repository files are written in Eng
 ### Level progression
 
 - Start at `easy` and move up gradually to easy +, medium, medium +, advanced; there is no rush.
-- Move up only after several clean easy sessions; mix in an occasional earlier-level question as review.
+- Claude decides when to move up. Criterion: **3 clean sessions in a row** at the current level (correct on first submission, within ~20 minutes). Mix in an occasional earlier-level question as review.
 - Levels and their typical shape are defined in `business_questions/README.md`.
 
 ## Northwind reference
