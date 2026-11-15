@@ -32,6 +32,7 @@ Triggered when the user asks for a question. Repository files are written in Eng
 - Create `business_questions/<level_folder>/YYYY-MM-DD_short-slug.sql` from `_template.sql` with the header filled (level folders: `01_easy`, `02_easy_plus`, `03_medium`, `04_medium_plus`, `05_advanced`).
 - The user pastes `MY SOLUTION` into the file. After the review, give the corrected final version **in chat only**.
 - The user writes `PROCESS NOTES`, `REVIEW`, `FINAL VERSION` and `BUSINESS INSIGHT` themselves. Do not fill them; when asked, review what they wrote and correct mistakes or inaccuracies.
+- When writing or correcting notes, use natural, plain English in the first person, short sentences, as the user would write them; avoid dense technical shorthand.
 - Propose a commit; only commit after the user confirms. Message format:
   `feat(business_questions): <date> <short description>`
 
